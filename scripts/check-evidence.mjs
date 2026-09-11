@@ -1,0 +1,55 @@
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { PR1067_HEAD } from "./upstream.mjs";
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const read = async (name) => JSON.parse(await readFile(path.join(root, "results", name), "utf8"));
+const mapping = (report, name) => report.evaluations[0].mappings.find((entry) => entry.native_name === name);
+
+const f1Risk = await read("f1-risk-referrers.result.json");
+assert.equal(f1Risk.interpretation_profile.scoped_referrers, "replace the current set with matching referring objects; do not retain input nodes, per #1067 head 7a7d2dd prose");
+assert.equal(f1Risk.record_type, "independent.cyclonedx.pr1067.perspective-evaluation.v2");
+assert.equal(f1Risk.interpretation_profile.id, "independent.cyclonedx.pr1067.candidate-interpretation.v2");
+assert.match(f1Risk.interpretation_profile.whole_document_referrers, /identity whenever the current node set contains the document root/);
+assert.equal(Object.hasOwn(f1Risk.interpretation_profile, "unscoped_referrers"), false);
+assert.deepEqual(mapping(f1Risk, "Ethical Considerations").matched_paths, ["$['risks']['risks'][0]"]);
+assert.deepEqual(mapping(f1Risk, "Ethical Considerations").via_steps[0].input_paths, ["$['components'][0]"]);
+assert.deepEqual(mapping(f1Risk, "Ethical Considerations").via_steps[0].output_paths, ["$['risks']['risks'][0]"]);
+assert.equal(mapping(f1Risk, "Ethical Considerations").via_steps[0].output_paths.includes("$['components'][0]"), false);
+
+const f1Dataset = await read("f1-dataset-refs.result.json");
+assert.deepEqual(mapping(f1Dataset, "Dataset Identity and Licensing").evaluation_prefixes, ["$['components'][2]"]);
+assert.deepEqual(mapping(f1Dataset, "Dataset Identity and Licensing").matched_paths, [
+  "$['components'][2]['licenses']",
+  "$['components'][2]['name']",
+  "$['components'][2]['version']"
+]);
+
+const f4 = await read("f4-one-hop-closure.result.json");
+assert.deepEqual(f4.evaluations[0].scope.scope_prefixes, ["$['components'][0]", "$['risks']['risks'][0]"]);
+assert.equal(f4.evaluations[0].scope.scope_prefixes.includes("$['components'][1]"), false);
+
+const f6 = await read("f6-external-bom-link.result.json");
+assert.equal(f6.diagnostics.external_bom_links.length, 1);
+assert.equal(f6.evaluations[0].scope.scope_prefixes.includes("$['components'][0]"), true);
+
+const policies = await read("required-policy-comparison.json");
+assert.equal(policies.record_type, "independent.cyclonedx.pr1067.required-policy-comparison.v2");
+assert.equal(Object.hasOwn(policies.definitions, "per_expanded_target_non_empty"), false);
+assert.deepEqual(policies.matrix.map((row) => [
+  row.mapping_any_match,
+  row.per_seed_subject_presence,
+  row.per_seed_subject_non_empty
+]), [
+  [true, false, false],
+  [true, true, false]
+]);
+
+const transition = await read("f1-head-transition-comparison.json");
+assert.equal(transition.to_head, PR1067_HEAD);
+assert.equal(transition.f1_referrers_trace.node_selection_unchanged, true);
+assert.deepEqual(transition.file_comparison.map((item) => item.byte_identity_unchanged), [false, true, true]);
+
+process.stdout.write("PR #1067 evidence checks passed.\n");

@@ -1,0 +1,127 @@
+{
+  "record_type": "independent.cyclonedx.pr1067.perspective-evaluation.v2",
+  "normative_status": "non-normative observational evidence",
+  "inputs": {
+    "bom": {
+      "path": "fixtures/f6-external-bom-link.json",
+      "bytes": 629,
+      "sha256": "645766e87b27adfb6fedafba728780a251855963d58060a364e32d49c273b249"
+    },
+    "perspective": null,
+    "application_index": 0,
+    "application_sha256": "480d7d780816e585697e7e50aebddb84c67d42321a4b1c3a5a8e7d9b6820bcec",
+    "definition_sha256": "480d7d780816e585697e7e50aebddb84c67d42321a4b1c3a5a8e7d9b6820bcec"
+  },
+  "engine": {
+    "name": "jsonpath-rfc9535",
+    "version": "1.3.0",
+    "operations": [
+      "paths",
+      "query"
+    ]
+  },
+  "interpretation_profile": {
+    "id": "independent.cyclonedx.pr1067.candidate-interpretation.v2",
+    "normative_status": "non-normative semantic probe",
+    "scope_expression_root": "document root",
+    "target_resolution": "local bom-ref; external BOM-Link recorded but not followed",
+    "scope_reference_entries": "objects with an own string-valued ref property",
+    "scope_reference_closure": "one hop from expression/target seeds; newly resolved nodes are not scanned",
+    "containment": "RFC 9535 normalized-path equality or descendant-token boundary",
+    "refs_restriction": "reference-value path must be inside the current node-set subtrees",
+    "referrers_holder": "object owning the property, or object owning one containing array; nested arrays are outside this bounded profile",
+    "scoped_referrers": "replace the current set with matching referring objects; do not retain input nodes, per #1067 head 7a7d2dd prose",
+    "whole_document_referrers": "identity whenever the current node set contains the document root, including omitted scopes, an explicit $ scope, and a preceding identity step",
+    "duplicate_bom_ref": "diagnostic; ambiguous reference is not resolved",
+    "dependencies": "unsupported in the bounded P0 probe and rejected fail-closed",
+    "required_completeness": "not decided by this evaluator"
+  },
+  "decision_points": [
+    "The prose defines one completeness evaluation per scope but not the required/recommended pass/fail aggregation rule within that scope.",
+    "The scope prose names object entries with a ref property; raw string references are traversed only when a mapping via expression selects them.",
+    "A scope containing several seed subjects does not define whether completeness is collective or per subject.",
+    "Empty selected values have a path match but no defined completeness meaning."
+  ],
+  "document_index": {
+    "node_count": 24,
+    "unique_bom_ref_count": 1,
+    "duplicate_bom_refs": []
+  },
+  "evaluations": [
+    {
+      "scope_index": 0,
+      "scope": {
+        "bom_ref": null,
+        "name": "Model A",
+        "step1_expression_nodes": [],
+        "step2_target_nodes": [
+          {
+            "target": "model-a",
+            "resolved_path": "$['components'][0]",
+            "resolution": "local"
+          }
+        ],
+        "step3_closure_nodes": [
+          {
+            "from_path": "$['components'][0]['external']",
+            "ref_value": "urn:cdx:123e4567-e89b-12d3-a456-426614174000/1#external-dataset",
+            "to_path": null,
+            "resolution": "external_not_followed"
+          }
+        ],
+        "seed_paths": [
+          "$['components'][0]"
+        ],
+        "scope_prefixes": [
+          "$['components'][0]"
+        ]
+      },
+      "mappings": [
+        {
+          "index": 0,
+          "native_name": "Selected objects",
+          "expression": "$..[?(@['bom-ref'])]",
+          "relevance": "informative",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [
+            "$['components'][0]"
+          ],
+          "matched_paths": [
+            "$['components'][0]"
+          ],
+          "matched_nodes": [
+            {
+              "path": "$['components'][0]",
+              "value_type": "object",
+              "empty": false,
+              "value": {
+                "bom-ref": "model-a",
+                "type": "machine-learning-model",
+                "name": "model-a",
+                "external": {
+                  "ref": "urn:cdx:123e4567-e89b-12d3-a456-426614174000/1#external-dataset"
+                }
+              }
+            }
+          ],
+          "match_count": 1
+        }
+      ]
+    }
+  ],
+  "diagnostics": {
+    "duplicate_bom_refs": [],
+    "unresolved_refs": [],
+    "external_bom_links": [
+      {
+        "phase": "scope.step3",
+        "from_path": "$['components'][0]['external']",
+        "ref": "urn:cdx:123e4567-e89b-12d3-a456-426614174000/1#external-dataset",
+        "action": "recorded_not_followed"
+      }
+    ]
+  }
+}

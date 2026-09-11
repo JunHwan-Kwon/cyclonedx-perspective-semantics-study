@@ -1,0 +1,52 @@
+{
+  "record_type": "independent.cyclonedx.pr1067.required-policy-comparison.v2",
+  "normative_status": "candidate-policy comparison; no policy is selected",
+  "definitions": {
+    "mapping_any_match": "At least one path is selected by the mapping in the scope.",
+    "per_seed_subject_presence": "Every initial scope seed has at least one selected path, without judging the selected value.",
+    "per_seed_subject_non_empty": "Every initial scope seed has at least one selected value that is not null, an empty string, an empty array, or an empty object. This bounded comparator does not define via association semantics."
+  },
+  "matrix": [
+    {
+      "fixture": "F2 model B has no licenses property",
+      "mapping": "License",
+      "mapping_any_match": true,
+      "per_seed_subject_presence": false,
+      "per_seed_subject_non_empty": false,
+      "subjects": [
+        {
+          "seed_path": "$['components'][0]",
+          "matched_paths": [
+            "$['components'][0]['licenses']"
+          ],
+          "present": true,
+          "non_empty": true
+        },
+        {
+          "seed_path": "$['components'][1]",
+          "matched_paths": [],
+          "present": false,
+          "non_empty": false
+        }
+      ]
+    },
+    {
+      "fixture": "F5 model has licenses: []",
+      "mapping": "License",
+      "mapping_any_match": true,
+      "per_seed_subject_presence": true,
+      "per_seed_subject_non_empty": false,
+      "subjects": [
+        {
+          "seed_path": "$['components'][0]",
+          "matched_paths": [
+            "$['components'][0]['licenses']"
+          ],
+          "present": true,
+          "non_empty": false
+        }
+      ]
+    }
+  ],
+  "conclusion": "The prose establishes one completeness evaluation per scope, while the same schema-valid path-presence facts permit different outcomes because aggregation within a multi-subject scope and empty-value treatment are not defined."
+}

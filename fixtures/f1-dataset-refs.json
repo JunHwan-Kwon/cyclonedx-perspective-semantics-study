@@ -1,0 +1,50 @@
+{
+  "specFormat": "CycloneDX",
+  "specVersion": "2.0",
+  "version": 1,
+  "components": [
+    {
+      "bom-ref": "model-a",
+      "type": "machine-learning-model",
+      "name": "model-a",
+      "version": "1.0",
+      "modelProperties": {
+        "training": {
+          "datasets": ["dataset-a"]
+        }
+      }
+    },
+    {
+      "bom-ref": "model-b",
+      "type": "machine-learning-model",
+      "name": "model-b",
+      "version": "1.0",
+      "modelProperties": {
+        "training": {
+          "datasets": ["dataset-b"]
+        }
+      }
+    },
+    {
+      "bom-ref": "dataset-a",
+      "type": "data",
+      "name": "dataset-a",
+      "version": "2026-09-10",
+      "licenses": [{ "license": { "id": "Apache-2.0" } }]
+    },
+    {
+      "bom-ref": "dataset-b",
+      "type": "data",
+      "name": "dataset-b",
+      "version": "2026-09-10",
+      "licenses": [{ "license": { "id": "MIT" } }]
+    }
+  ],
+  "perspectives": [
+    {
+      "predefined": "cdx:perspectives:model-card",
+      "predefinedVersion": 1,
+      "scopes": [{ "name": "Model A", "targets": ["model-a"] }]
+    }
+  ]
+}

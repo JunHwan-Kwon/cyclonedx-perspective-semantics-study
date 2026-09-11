@@ -1,0 +1,22 @@
+{
+  "specFormat": "CycloneDX",
+  "specVersion": "2.0",
+  "version": 1,
+  "components": [
+    {
+      "bom-ref": "model-empty",
+      "type": "machine-learning-model",
+      "name": "model-empty",
+      "version": "1.0",
+      "description": "",
+      "licenses": []
+    }
+  ],
+  "perspectives": [
+    {
+      "predefined": "cdx:perspectives:model-card",
+      "predefinedVersion": 1,
+      "scopes": [{ "name": "Empty-valued model", "targets": ["model-empty"] }]
+    }
+  ]
+}

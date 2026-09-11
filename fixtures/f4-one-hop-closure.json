@@ -1,0 +1,40 @@
+{
+  "specFormat": "CycloneDX",
+  "specVersion": "2.0",
+  "version": 1,
+  "components": [
+    {
+      "bom-ref": "model-a",
+      "type": "machine-learning-model",
+      "name": "model-a",
+      "next": { "ref": "dataset-a" }
+    },
+    {
+      "bom-ref": "dataset-a",
+      "type": "data",
+      "name": "dataset-a"
+    }
+  ],
+  "risks": {
+    "risks": [
+      {
+        "bom-ref": "risk-a",
+        "name": "risk-a",
+        "subject": { "ref": "model-a" }
+      }
+    ]
+  },
+  "perspectives": [
+    {
+      "name": "One-hop closure probe",
+      "scopes": [{ "name": "Risk A", "targets": ["risk-a"] }],
+      "mappings": [
+        {
+          "nativeName": "Selected objects",
+          "expression": "$..[?(@['bom-ref'])]",
+          "relevance": "informative"
+        }
+      ]
+    }
+  ]
+}

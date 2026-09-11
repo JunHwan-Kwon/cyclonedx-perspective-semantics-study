@@ -1,0 +1,75 @@
+{
+  "record_type": "independent.cyclonedx.pr1067.expected-trace.v1",
+  "head": "fdc2bd6a27dd1d8d120cd3b9843323eccdb431cc",
+  "inputs": {
+    "schema_sha256": "7c165e94fa17245e6dc5ae423554eebd5d1a24f115f3fe9582f8bb9936c7110e",
+    "catalog_sha256": "a638e7753ec79d303cfecde3ecc2c06f984247ce4b6f49e7b55bdc253af70f51",
+    "fixture_sha256": "37f05b1f51855ee286cef0c10ef97c70717673989e598b6019a9a2994ce1b3e6"
+  },
+  "scope": {
+    "seed_paths": ["$['components'][0]"],
+    "scope_prefixes": ["$['components'][0]"]
+  },
+  "mappings": [
+    {
+      "native_name": "Ethical Considerations",
+      "via_steps": [
+        {
+          "kind": "referrers",
+          "expression": "$.risks.risks[*].affects[*]",
+          "input_paths": ["$['components'][0]"],
+          "candidate_paths": [
+            "$['risks']['risks'][0]['affects'][0]",
+            "$['risks']['risks'][1]['affects'][0]"
+          ],
+          "restricted_paths": [
+            "$['risks']['risks'][0]['affects'][0]",
+            "$['risks']['risks'][1]['affects'][0]"
+          ],
+          "output_paths": ["$['risks']['risks'][0]"],
+          "edges": [
+            {
+              "from_path": "$['risks']['risks'][0]",
+              "reference_path": "$['risks']['risks'][0]['affects'][0]",
+              "ref_value": "model-a",
+              "to_path": "$['components'][0]"
+            }
+          ],
+          "whole_document_identity": false
+        }
+      ],
+      "evaluation_prefixes": ["$['risks']['risks'][0]"],
+      "matched_paths": ["$['risks']['risks'][0]"]
+    },
+    {
+      "native_name": "Fairness Assessments",
+      "via_steps": [
+        {
+          "kind": "referrers",
+          "expression": "$.risks.risks[*].affects[*]",
+          "input_paths": ["$['components'][0]"],
+          "candidate_paths": [
+            "$['risks']['risks'][0]['affects'][0]",
+            "$['risks']['risks'][1]['affects'][0]"
+          ],
+          "restricted_paths": [
+            "$['risks']['risks'][0]['affects'][0]",
+            "$['risks']['risks'][1]['affects'][0]"
+          ],
+          "output_paths": ["$['risks']['risks'][0]"],
+          "edges": [
+            {
+              "from_path": "$['risks']['risks'][0]",
+              "reference_path": "$['risks']['risks'][0]['affects'][0]",
+              "ref_value": "model-a",
+              "to_path": "$['components'][0]"
+            }
+          ],
+          "whole_document_identity": false
+        }
+      ],
+      "evaluation_prefixes": ["$['risks']['risks'][0]"],
+      "matched_paths": ["$['risks']['risks'][0]"]
+    }
+  ]
+}

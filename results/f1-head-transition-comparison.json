@@ -1,0 +1,213 @@
+{
+  "record_type": "independent.cyclonedx.pr1067.head-transition-comparison.v1",
+  "normative_status": "observational comparison; no completeness policy selected",
+  "from_head": "fdc2bd6a27dd1d8d120cd3b9843323eccdb431cc",
+  "to_head": "7a7d2dd599968e528349ca3cf262120da2831ca8",
+  "file_comparison": [
+    {
+      "role": "perspective schema",
+      "path": "schema/2.0/model/cyclonedx-perspective-2.0.schema.json",
+      "before_sha256": "7c165e94fa17245e6dc5ae423554eebd5d1a24f115f3fe9582f8bb9936c7110e",
+      "after_sha256": "ad21323b9133f4f7096c76aecf478c786ab0d577f7652579e610d397afb31ce9",
+      "bytes_after": 38322,
+      "byte_identity_unchanged": false
+    },
+    {
+      "role": "model-card catalog",
+      "path": "perspectives/model-card-perspective.json",
+      "before_sha256": "a638e7753ec79d303cfecde3ecc2c06f984247ce4b6f49e7b55bdc253af70f51",
+      "after_sha256": "a638e7753ec79d303cfecde3ecc2c06f984247ce4b6f49e7b55bdc253af70f51",
+      "bytes_after": 14504,
+      "byte_identity_unchanged": true
+    },
+    {
+      "role": "referrers fixture",
+      "path": "tools/src/test/resources/2.0/valid-perspective-referrers-2.0.json",
+      "before_sha256": "37f05b1f51855ee286cef0c10ef97c70717673989e598b6019a9a2994ce1b3e6",
+      "after_sha256": "37f05b1f51855ee286cef0c10ef97c70717673989e598b6019a9a2994ce1b3e6",
+      "bytes_after": 2355,
+      "byte_identity_unchanged": true
+    }
+  ],
+  "f1_referrers_trace": {
+    "node_selection_unchanged": true,
+    "comparison_scope": "scope seeds/prefixes plus candidate, restricted, output, edge, evaluation, and matched paths for the two referrers mappings",
+    "before": {
+      "scope": {
+        "seed_paths": [
+          "$['components'][0]"
+        ],
+        "scope_prefixes": [
+          "$['components'][0]"
+        ]
+      },
+      "mappings": [
+        {
+          "native_name": "Ethical Considerations",
+          "via_steps": [
+            {
+              "kind": "referrers",
+              "expression": "$.risks.risks[*].affects[*]",
+              "input_paths": [
+                "$['components'][0]"
+              ],
+              "candidate_paths": [
+                "$['risks']['risks'][0]['affects'][0]",
+                "$['risks']['risks'][1]['affects'][0]"
+              ],
+              "restricted_paths": [
+                "$['risks']['risks'][0]['affects'][0]",
+                "$['risks']['risks'][1]['affects'][0]"
+              ],
+              "output_paths": [
+                "$['risks']['risks'][0]"
+              ],
+              "edges": [
+                {
+                  "from_path": "$['risks']['risks'][0]",
+                  "reference_path": "$['risks']['risks'][0]['affects'][0]",
+                  "ref_value": "model-a",
+                  "to_path": "$['components'][0]"
+                }
+              ],
+              "whole_document_identity": false
+            }
+          ],
+          "evaluation_prefixes": [
+            "$['risks']['risks'][0]"
+          ],
+          "matched_paths": [
+            "$['risks']['risks'][0]"
+          ]
+        },
+        {
+          "native_name": "Fairness Assessments",
+          "via_steps": [
+            {
+              "kind": "referrers",
+              "expression": "$.risks.risks[*].affects[*]",
+              "input_paths": [
+                "$['components'][0]"
+              ],
+              "candidate_paths": [
+                "$['risks']['risks'][0]['affects'][0]",
+                "$['risks']['risks'][1]['affects'][0]"
+              ],
+              "restricted_paths": [
+                "$['risks']['risks'][0]['affects'][0]",
+                "$['risks']['risks'][1]['affects'][0]"
+              ],
+              "output_paths": [
+                "$['risks']['risks'][0]"
+              ],
+              "edges": [
+                {
+                  "from_path": "$['risks']['risks'][0]",
+                  "reference_path": "$['risks']['risks'][0]['affects'][0]",
+                  "ref_value": "model-a",
+                  "to_path": "$['components'][0]"
+                }
+              ],
+              "whole_document_identity": false
+            }
+          ],
+          "evaluation_prefixes": [
+            "$['risks']['risks'][0]"
+          ],
+          "matched_paths": [
+            "$['risks']['risks'][0]"
+          ]
+        }
+      ]
+    },
+    "after": {
+      "scope": {
+        "seed_paths": [
+          "$['components'][0]"
+        ],
+        "scope_prefixes": [
+          "$['components'][0]"
+        ]
+      },
+      "mappings": [
+        {
+          "native_name": "Ethical Considerations",
+          "via_steps": [
+            {
+              "kind": "referrers",
+              "expression": "$.risks.risks[*].affects[*]",
+              "input_paths": [
+                "$['components'][0]"
+              ],
+              "candidate_paths": [
+                "$['risks']['risks'][0]['affects'][0]",
+                "$['risks']['risks'][1]['affects'][0]"
+              ],
+              "restricted_paths": [
+                "$['risks']['risks'][0]['affects'][0]",
+                "$['risks']['risks'][1]['affects'][0]"
+              ],
+              "output_paths": [
+                "$['risks']['risks'][0]"
+              ],
+              "edges": [
+                {
+                  "from_path": "$['risks']['risks'][0]",
+                  "reference_path": "$['risks']['risks'][0]['affects'][0]",
+                  "ref_value": "model-a",
+                  "to_path": "$['components'][0]"
+                }
+              ],
+              "whole_document_identity": false
+            }
+          ],
+          "evaluation_prefixes": [
+            "$['risks']['risks'][0]"
+          ],
+          "matched_paths": [
+            "$['risks']['risks'][0]"
+          ]
+        },
+        {
+          "native_name": "Fairness Assessments",
+          "via_steps": [
+            {
+              "kind": "referrers",
+              "expression": "$.risks.risks[*].affects[*]",
+              "input_paths": [
+                "$['components'][0]"
+              ],
+              "candidate_paths": [
+                "$['risks']['risks'][0]['affects'][0]",
+                "$['risks']['risks'][1]['affects'][0]"
+              ],
+              "restricted_paths": [
+                "$['risks']['risks'][0]['affects'][0]",
+                "$['risks']['risks'][1]['affects'][0]"
+              ],
+              "output_paths": [
+                "$['risks']['risks'][0]"
+              ],
+              "edges": [
+                {
+                  "from_path": "$['risks']['risks'][0]",
+                  "reference_path": "$['risks']['risks'][0]['affects'][0]",
+                  "ref_value": "model-a",
+                  "to_path": "$['components'][0]"
+                }
+              ],
+              "whole_document_identity": false
+            }
+          ],
+          "evaluation_prefixes": [
+            "$['risks']['risks'][0]"
+          ],
+          "matched_paths": [
+            "$['risks']['risks'][0]"
+          ]
+        }
+      ]
+    }
+  },
+  "conclusion": "F1 referrers node-selection results confirmed unchanged at 7a7d2dd; the schema bytes changed while the catalog and fixture bytes did not."
+}

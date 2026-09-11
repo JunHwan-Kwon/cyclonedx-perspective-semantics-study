@@ -1,0 +1,32 @@
+{
+  "specFormat": "CycloneDX",
+  "specVersion": "2.0",
+  "version": 1,
+  "components": [
+    {
+      "bom-ref": "model-a",
+      "type": "machine-learning-model",
+      "name": "model-a",
+      "version": "1.0",
+      "licenses": [{ "license": { "id": "Apache-2.0" } }]
+    },
+    {
+      "bom-ref": "model-b",
+      "type": "machine-learning-model",
+      "name": "model-b",
+      "version": "1.0"
+    }
+  ],
+  "perspectives": [
+    {
+      "predefined": "cdx:perspectives:model-card",
+      "predefinedVersion": 1,
+      "scopes": [
+        {
+          "name": "Both models",
+          "expressions": ["$..[?(@.type=='machine-learning-model')]"]
+        }
+      ]
+    }
+  ]
+}

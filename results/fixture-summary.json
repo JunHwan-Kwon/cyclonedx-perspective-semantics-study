@@ -1,0 +1,435 @@
+{
+  "record_type": "independent.cyclonedx.pr1067.fixture-summary.v2",
+  "cases": [
+    {
+      "id": "f1-risk-referrers",
+      "result": "results/f1-risk-referrers.result.json",
+      "scope_count": 1,
+      "mapping_counts": [
+        [
+          {
+            "native_name": "Model Details",
+            "count": 2
+          },
+          {
+            "native_name": "Model Identifiers",
+            "count": 0
+          },
+          {
+            "native_name": "Developed By",
+            "count": 0
+          },
+          {
+            "native_name": "License",
+            "count": 0
+          },
+          {
+            "native_name": "Supported Tasks",
+            "count": 0
+          },
+          {
+            "native_name": "Learning Paradigms",
+            "count": 0
+          },
+          {
+            "native_name": "Model Architecture",
+            "count": 0
+          },
+          {
+            "native_name": "Input and Output Parameters",
+            "count": 0
+          },
+          {
+            "native_name": "Model Size and Quantization",
+            "count": 0
+          },
+          {
+            "native_name": "Training Data and Procedure",
+            "count": 0
+          },
+          {
+            "native_name": "Training Procedure",
+            "count": 0
+          },
+          {
+            "native_name": "Dataset Identity and Licensing",
+            "count": 0
+          },
+          {
+            "native_name": "Dataset Description and Contents",
+            "count": 0
+          },
+          {
+            "native_name": "Dataset Classification and Sensitive Data",
+            "count": 0
+          },
+          {
+            "native_name": "Dataset Governance",
+            "count": 0
+          },
+          {
+            "native_name": "Quantitative Analysis",
+            "count": 0
+          },
+          {
+            "native_name": "Intended Use",
+            "count": 0
+          },
+          {
+            "native_name": "Use Case Definitions",
+            "count": 0
+          },
+          {
+            "native_name": "Intended Users",
+            "count": 0
+          },
+          {
+            "native_name": "Technical Limitations",
+            "count": 0
+          },
+          {
+            "native_name": "Ethical Considerations",
+            "count": 1
+          },
+          {
+            "native_name": "Fairness Assessments",
+            "count": 1
+          },
+          {
+            "native_name": "Environmental Considerations",
+            "count": 0
+          }
+        ]
+      ]
+    },
+    {
+      "id": "f1-dataset-refs",
+      "result": "results/f1-dataset-refs.result.json",
+      "scope_count": 1,
+      "mapping_counts": [
+        [
+          {
+            "native_name": "Model Details",
+            "count": 2
+          },
+          {
+            "native_name": "Model Identifiers",
+            "count": 0
+          },
+          {
+            "native_name": "Developed By",
+            "count": 0
+          },
+          {
+            "native_name": "License",
+            "count": 0
+          },
+          {
+            "native_name": "Supported Tasks",
+            "count": 0
+          },
+          {
+            "native_name": "Learning Paradigms",
+            "count": 0
+          },
+          {
+            "native_name": "Model Architecture",
+            "count": 0
+          },
+          {
+            "native_name": "Input and Output Parameters",
+            "count": 0
+          },
+          {
+            "native_name": "Model Size and Quantization",
+            "count": 0
+          },
+          {
+            "native_name": "Training Data and Procedure",
+            "count": 1
+          },
+          {
+            "native_name": "Training Procedure",
+            "count": 0
+          },
+          {
+            "native_name": "Dataset Identity and Licensing",
+            "count": 3
+          },
+          {
+            "native_name": "Dataset Description and Contents",
+            "count": 0
+          },
+          {
+            "native_name": "Dataset Classification and Sensitive Data",
+            "count": 0
+          },
+          {
+            "native_name": "Dataset Governance",
+            "count": 0
+          },
+          {
+            "native_name": "Quantitative Analysis",
+            "count": 0
+          },
+          {
+            "native_name": "Intended Use",
+            "count": 0
+          },
+          {
+            "native_name": "Use Case Definitions",
+            "count": 0
+          },
+          {
+            "native_name": "Intended Users",
+            "count": 0
+          },
+          {
+            "native_name": "Technical Limitations",
+            "count": 0
+          },
+          {
+            "native_name": "Ethical Considerations",
+            "count": 0
+          },
+          {
+            "native_name": "Fairness Assessments",
+            "count": 0
+          },
+          {
+            "native_name": "Environmental Considerations",
+            "count": 0
+          }
+        ]
+      ]
+    },
+    {
+      "id": "f2-subject-coverage",
+      "result": "results/f2-subject-coverage.result.json",
+      "scope_count": 1,
+      "mapping_counts": [
+        [
+          {
+            "native_name": "Model Details",
+            "count": 4
+          },
+          {
+            "native_name": "Model Identifiers",
+            "count": 0
+          },
+          {
+            "native_name": "Developed By",
+            "count": 0
+          },
+          {
+            "native_name": "License",
+            "count": 1
+          },
+          {
+            "native_name": "Supported Tasks",
+            "count": 0
+          },
+          {
+            "native_name": "Learning Paradigms",
+            "count": 0
+          },
+          {
+            "native_name": "Model Architecture",
+            "count": 0
+          },
+          {
+            "native_name": "Input and Output Parameters",
+            "count": 0
+          },
+          {
+            "native_name": "Model Size and Quantization",
+            "count": 0
+          },
+          {
+            "native_name": "Training Data and Procedure",
+            "count": 0
+          },
+          {
+            "native_name": "Training Procedure",
+            "count": 0
+          },
+          {
+            "native_name": "Dataset Identity and Licensing",
+            "count": 0
+          },
+          {
+            "native_name": "Dataset Description and Contents",
+            "count": 0
+          },
+          {
+            "native_name": "Dataset Classification and Sensitive Data",
+            "count": 0
+          },
+          {
+            "native_name": "Dataset Governance",
+            "count": 0
+          },
+          {
+            "native_name": "Quantitative Analysis",
+            "count": 0
+          },
+          {
+            "native_name": "Intended Use",
+            "count": 0
+          },
+          {
+            "native_name": "Use Case Definitions",
+            "count": 0
+          },
+          {
+            "native_name": "Intended Users",
+            "count": 0
+          },
+          {
+            "native_name": "Technical Limitations",
+            "count": 0
+          },
+          {
+            "native_name": "Ethical Considerations",
+            "count": 0
+          },
+          {
+            "native_name": "Fairness Assessments",
+            "count": 0
+          },
+          {
+            "native_name": "Environmental Considerations",
+            "count": 0
+          }
+        ]
+      ]
+    },
+    {
+      "id": "f5-empty-values",
+      "result": "results/f5-empty-values.result.json",
+      "scope_count": 1,
+      "mapping_counts": [
+        [
+          {
+            "native_name": "Model Details",
+            "count": 3
+          },
+          {
+            "native_name": "Model Identifiers",
+            "count": 0
+          },
+          {
+            "native_name": "Developed By",
+            "count": 0
+          },
+          {
+            "native_name": "License",
+            "count": 1
+          },
+          {
+            "native_name": "Supported Tasks",
+            "count": 0
+          },
+          {
+            "native_name": "Learning Paradigms",
+            "count": 0
+          },
+          {
+            "native_name": "Model Architecture",
+            "count": 0
+          },
+          {
+            "native_name": "Input and Output Parameters",
+            "count": 0
+          },
+          {
+            "native_name": "Model Size and Quantization",
+            "count": 0
+          },
+          {
+            "native_name": "Training Data and Procedure",
+            "count": 0
+          },
+          {
+            "native_name": "Training Procedure",
+            "count": 0
+          },
+          {
+            "native_name": "Dataset Identity and Licensing",
+            "count": 0
+          },
+          {
+            "native_name": "Dataset Description and Contents",
+            "count": 0
+          },
+          {
+            "native_name": "Dataset Classification and Sensitive Data",
+            "count": 0
+          },
+          {
+            "native_name": "Dataset Governance",
+            "count": 0
+          },
+          {
+            "native_name": "Quantitative Analysis",
+            "count": 0
+          },
+          {
+            "native_name": "Intended Use",
+            "count": 0
+          },
+          {
+            "native_name": "Use Case Definitions",
+            "count": 0
+          },
+          {
+            "native_name": "Intended Users",
+            "count": 0
+          },
+          {
+            "native_name": "Technical Limitations",
+            "count": 0
+          },
+          {
+            "native_name": "Ethical Considerations",
+            "count": 0
+          },
+          {
+            "native_name": "Fairness Assessments",
+            "count": 0
+          },
+          {
+            "native_name": "Environmental Considerations",
+            "count": 0
+          }
+        ]
+      ]
+    },
+    {
+      "id": "f4-one-hop-closure",
+      "result": "results/f4-one-hop-closure.result.json",
+      "scope_count": 1,
+      "mapping_counts": [
+        [
+          {
+            "native_name": "Selected objects",
+            "count": 2
+          }
+        ]
+      ]
+    },
+    {
+      "id": "f6-external-bom-link",
+      "result": "results/f6-external-bom-link.result.json",
+      "scope_count": 1,
+      "mapping_counts": [
+        [
+          {
+            "native_name": "Selected objects",
+            "count": 1
+          }
+        ]
+      ]
+    }
+  ]
+}

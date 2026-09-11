@@ -1,0 +1,28 @@
+{
+  "specFormat": "CycloneDX",
+  "specVersion": "2.0",
+  "version": 1,
+  "components": [
+    {
+      "bom-ref": "model-a",
+      "type": "machine-learning-model",
+      "name": "model-a",
+      "external": {
+        "ref": "urn:cdx:123e4567-e89b-12d3-a456-426614174000/1#external-dataset"
+      }
+    }
+  ],
+  "perspectives": [
+    {
+      "name": "External BOM-Link probe",
+      "scopes": [{ "name": "Model A", "targets": ["model-a"] }],
+      "mappings": [
+        {
+          "nativeName": "Selected objects",
+          "expression": "$..[?(@['bom-ref'])]",
+          "relevance": "informative"
+        }
+      ]
+    }
+  ]
+}

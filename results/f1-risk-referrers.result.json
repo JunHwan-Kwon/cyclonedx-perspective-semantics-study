@@ -1,0 +1,630 @@
+{
+  "record_type": "independent.cyclonedx.pr1067.perspective-evaluation.v2",
+  "normative_status": "non-normative observational evidence",
+  "inputs": {
+    "bom": {
+      "path": "source/valid-perspective-referrers-2.0.json",
+      "bytes": 2355,
+      "sha256": "37f05b1f51855ee286cef0c10ef97c70717673989e598b6019a9a2994ce1b3e6"
+    },
+    "perspective": {
+      "path": "source/model-card-perspective.json",
+      "bytes": 14504,
+      "sha256": "a638e7753ec79d303cfecde3ecc2c06f984247ce4b6f49e7b55bdc253af70f51"
+    },
+    "application_index": 0,
+    "application_sha256": "e833ea92df426b6398b35abcbc45c5a14c7ed2f4040ff539c83c880727e5e69e",
+    "definition_sha256": "ef5353f6c96db99adae93804c9fd1f487dfdb3ce88a96e7a0e0914c9eae0792c"
+  },
+  "engine": {
+    "name": "jsonpath-rfc9535",
+    "version": "1.3.0",
+    "operations": [
+      "paths",
+      "query"
+    ]
+  },
+  "interpretation_profile": {
+    "id": "independent.cyclonedx.pr1067.candidate-interpretation.v2",
+    "normative_status": "non-normative semantic probe",
+    "scope_expression_root": "document root",
+    "target_resolution": "local bom-ref; external BOM-Link recorded but not followed",
+    "scope_reference_entries": "objects with an own string-valued ref property",
+    "scope_reference_closure": "one hop from expression/target seeds; newly resolved nodes are not scanned",
+    "containment": "RFC 9535 normalized-path equality or descendant-token boundary",
+    "refs_restriction": "reference-value path must be inside the current node-set subtrees",
+    "referrers_holder": "object owning the property, or object owning one containing array; nested arrays are outside this bounded profile",
+    "scoped_referrers": "replace the current set with matching referring objects; do not retain input nodes, per #1067 head 7a7d2dd prose",
+    "whole_document_referrers": "identity whenever the current node set contains the document root, including omitted scopes, an explicit $ scope, and a preceding identity step",
+    "duplicate_bom_ref": "diagnostic; ambiguous reference is not resolved",
+    "dependencies": "unsupported in the bounded P0 probe and rejected fail-closed",
+    "required_completeness": "not decided by this evaluator"
+  },
+  "decision_points": [
+    "The prose defines one completeness evaluation per scope but not the required/recommended pass/fail aggregation rule within that scope.",
+    "The scope prose names object entries with a ref property; raw string references are traversed only when a mapping via expression selects them.",
+    "A scope containing several seed subjects does not define whether completeness is collective or per subject.",
+    "Empty selected values have a path match but no defined completeness meaning."
+  ],
+  "document_index": {
+    "node_count": 75,
+    "unique_bom_ref_count": 6,
+    "duplicate_bom_refs": []
+  },
+  "evaluations": [
+    {
+      "scope_index": 0,
+      "scope": {
+        "bom_ref": null,
+        "name": "Model A",
+        "step1_expression_nodes": [],
+        "step2_target_nodes": [
+          {
+            "target": "model-a",
+            "resolved_path": "$['components'][0]",
+            "resolution": "local"
+          }
+        ],
+        "step3_closure_nodes": [],
+        "seed_paths": [
+          "$['components'][0]"
+        ],
+        "scope_prefixes": [
+          "$['components'][0]"
+        ]
+      },
+      "mappings": [
+        {
+          "index": 0,
+          "native_name": "Model Details",
+          "expression": "$..[?(@.type=='machine-learning-model')]['name','version','description']",
+          "relevance": "required",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [
+            "$['components'][0]['name']",
+            "$['components'][0]['version']",
+            "$['components'][1]['name']",
+            "$['components'][1]['version']"
+          ],
+          "matched_paths": [
+            "$['components'][0]['name']",
+            "$['components'][0]['version']"
+          ],
+          "matched_nodes": [
+            {
+              "path": "$['components'][0]['name']",
+              "value_type": "string",
+              "empty": false,
+              "value": "model-a"
+            },
+            {
+              "path": "$['components'][0]['version']",
+              "value_type": "string",
+              "empty": false,
+              "value": "1.0"
+            }
+          ],
+          "match_count": 2
+        },
+        {
+          "index": 1,
+          "native_name": "Model Identifiers",
+          "expression": "$..[?(@.type=='machine-learning-model')].identifiers",
+          "relevance": "recommended",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 2,
+          "native_name": "Developed By",
+          "expression": "$..[?(@.type=='machine-learning-model')].parties[?(@.roles[?(@.role=='supplier')])]",
+          "relevance": "required",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 3,
+          "native_name": "License",
+          "expression": "$..[?(@.type=='machine-learning-model')].licenses",
+          "relevance": "required",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 4,
+          "native_name": "Supported Tasks",
+          "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.tasks",
+          "relevance": "required",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 5,
+          "native_name": "Learning Paradigms",
+          "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.learningTypes",
+          "relevance": "recommended",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 6,
+          "native_name": "Model Architecture",
+          "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.architecture",
+          "relevance": "recommended",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 7,
+          "native_name": "Input and Output Parameters",
+          "expression": "$..[?(@.type=='machine-learning-model')].modelProperties['inputs','outputs']",
+          "relevance": "recommended",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 8,
+          "native_name": "Model Size and Quantization",
+          "expression": "$..[?(@.type=='machine-learning-model')].modelProperties['parameterCount','quantization']",
+          "relevance": "optional",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 9,
+          "native_name": "Training Data and Procedure",
+          "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.training",
+          "relevance": "recommended",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 10,
+          "native_name": "Training Procedure",
+          "expression": "$.formulation[*]",
+          "relevance": "recommended",
+          "via_steps": [
+            {
+              "index": 0,
+              "kind": "refs",
+              "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.training.formula",
+              "input_count": 1,
+              "input_paths": [
+                "$['components'][0]"
+              ],
+              "candidate_paths": [],
+              "restricted_paths": [],
+              "output_paths": [],
+              "edges": [],
+              "whole_document_identity": false
+            }
+          ],
+          "evaluation_prefixes": [],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 11,
+          "native_name": "Dataset Identity and Licensing",
+          "expression": "$..[?(@.type=='data')]['name','version','identifiers','licenses']",
+          "relevance": "required",
+          "via_steps": [
+            {
+              "index": 0,
+              "kind": "refs",
+              "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.training.datasets[*]",
+              "input_count": 1,
+              "input_paths": [
+                "$['components'][0]"
+              ],
+              "candidate_paths": [],
+              "restricted_paths": [],
+              "output_paths": [],
+              "edges": [],
+              "whole_document_identity": false
+            }
+          ],
+          "evaluation_prefixes": [],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 12,
+          "native_name": "Dataset Description and Contents",
+          "expression": "$..[?(@.type=='data')].data[*]['type','description','contents']",
+          "relevance": "recommended",
+          "via_steps": [
+            {
+              "index": 0,
+              "kind": "refs",
+              "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.training.datasets[*]",
+              "input_count": 1,
+              "input_paths": [
+                "$['components'][0]"
+              ],
+              "candidate_paths": [],
+              "restricted_paths": [],
+              "output_paths": [],
+              "edges": [],
+              "whole_document_identity": false
+            }
+          ],
+          "evaluation_prefixes": [],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 13,
+          "native_name": "Dataset Classification and Sensitive Data",
+          "expression": "$..[?(@.type=='data')].data[*]['classification','sensitiveData']",
+          "relevance": "recommended",
+          "via_steps": [
+            {
+              "index": 0,
+              "kind": "refs",
+              "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.training.datasets[*]",
+              "input_count": 1,
+              "input_paths": [
+                "$['components'][0]"
+              ],
+              "candidate_paths": [],
+              "restricted_paths": [],
+              "output_paths": [],
+              "edges": [],
+              "whole_document_identity": false
+            }
+          ],
+          "evaluation_prefixes": [],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 14,
+          "native_name": "Dataset Governance",
+          "expression": "$..[?(@.type=='data')].data[*].governance",
+          "relevance": "recommended",
+          "via_steps": [
+            {
+              "index": 0,
+              "kind": "refs",
+              "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.training.datasets[*]",
+              "input_count": 1,
+              "input_paths": [
+                "$['components'][0]"
+              ],
+              "candidate_paths": [],
+              "restricted_paths": [],
+              "output_paths": [],
+              "edges": [],
+              "whole_document_identity": false
+            }
+          ],
+          "evaluation_prefixes": [],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 15,
+          "native_name": "Quantitative Analysis",
+          "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.evaluation",
+          "relevance": "recommended",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 16,
+          "native_name": "Intended Use",
+          "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.useCases",
+          "relevance": "required",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 17,
+          "native_name": "Use Case Definitions",
+          "expression": "$.definitions.useCases[*]",
+          "relevance": "recommended",
+          "via_steps": [
+            {
+              "index": 0,
+              "kind": "refs",
+              "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.useCases[*]",
+              "input_count": 1,
+              "input_paths": [
+                "$['components'][0]"
+              ],
+              "candidate_paths": [],
+              "restricted_paths": [],
+              "output_paths": [],
+              "edges": [],
+              "whole_document_identity": false
+            }
+          ],
+          "evaluation_prefixes": [],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 18,
+          "native_name": "Intended Users",
+          "expression": "$..[?(@.type=='machine-learning-model')].parties[?(@.roles[?(@.role=='end-user')])]",
+          "relevance": "recommended",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 19,
+          "native_name": "Technical Limitations",
+          "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.limitations",
+          "relevance": "required",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        },
+        {
+          "index": 20,
+          "native_name": "Ethical Considerations",
+          "expression": "$.risks.risks[?(@.domains[?(@.type=='ethical')])]",
+          "relevance": "required",
+          "via_steps": [
+            {
+              "index": 0,
+              "kind": "referrers",
+              "expression": "$.risks.risks[*].affects[*]",
+              "input_count": 1,
+              "input_paths": [
+                "$['components'][0]"
+              ],
+              "candidate_paths": [
+                "$['risks']['risks'][0]['affects'][0]",
+                "$['risks']['risks'][1]['affects'][0]"
+              ],
+              "restricted_paths": [
+                "$['risks']['risks'][0]['affects'][0]",
+                "$['risks']['risks'][1]['affects'][0]"
+              ],
+              "output_paths": [
+                "$['risks']['risks'][0]"
+              ],
+              "edges": [
+                {
+                  "from_path": "$['risks']['risks'][0]",
+                  "reference_path": "$['risks']['risks'][0]['affects'][0]",
+                  "ref_value": "model-a",
+                  "to_path": "$['components'][0]"
+                }
+              ],
+              "whole_document_identity": false
+            }
+          ],
+          "evaluation_prefixes": [
+            "$['risks']['risks'][0]"
+          ],
+          "expression_paths": [
+            "$['risks']['risks'][0]",
+            "$['risks']['risks'][1]"
+          ],
+          "matched_paths": [
+            "$['risks']['risks'][0]"
+          ],
+          "matched_nodes": [
+            {
+              "path": "$['risks']['risks'][0]",
+              "value_type": "object",
+              "empty": false,
+              "value": {
+                "bom-ref": "risk-a",
+                "name": "Fairness risk A",
+                "statement": "Model A may perform differently across groups.",
+                "domains": [
+                  {
+                    "type": "ethical"
+                  }
+                ],
+                "affects": [
+                  "model-a"
+                ],
+                "inherentRisk": {
+                  "impact": {
+                    "level": "moderate",
+                    "categories": [
+                      "fairness"
+                    ]
+                  }
+                }
+              }
+            }
+          ],
+          "match_count": 1
+        },
+        {
+          "index": 21,
+          "native_name": "Fairness Assessments",
+          "expression": "$.risks.risks[?(@.inherentRisk.impact.categories[?(@=='fairness' || @=='bias')])]",
+          "relevance": "recommended",
+          "via_steps": [
+            {
+              "index": 0,
+              "kind": "referrers",
+              "expression": "$.risks.risks[*].affects[*]",
+              "input_count": 1,
+              "input_paths": [
+                "$['components'][0]"
+              ],
+              "candidate_paths": [
+                "$['risks']['risks'][0]['affects'][0]",
+                "$['risks']['risks'][1]['affects'][0]"
+              ],
+              "restricted_paths": [
+                "$['risks']['risks'][0]['affects'][0]",
+                "$['risks']['risks'][1]['affects'][0]"
+              ],
+              "output_paths": [
+                "$['risks']['risks'][0]"
+              ],
+              "edges": [
+                {
+                  "from_path": "$['risks']['risks'][0]",
+                  "reference_path": "$['risks']['risks'][0]['affects'][0]",
+                  "ref_value": "model-a",
+                  "to_path": "$['components'][0]"
+                }
+              ],
+              "whole_document_identity": false
+            }
+          ],
+          "evaluation_prefixes": [
+            "$['risks']['risks'][0]"
+          ],
+          "expression_paths": [
+            "$['risks']['risks'][0]",
+            "$['risks']['risks'][1]"
+          ],
+          "matched_paths": [
+            "$['risks']['risks'][0]"
+          ],
+          "matched_nodes": [
+            {
+              "path": "$['risks']['risks'][0]",
+              "value_type": "object",
+              "empty": false,
+              "value": {
+                "bom-ref": "risk-a",
+                "name": "Fairness risk A",
+                "statement": "Model A may perform differently across groups.",
+                "domains": [
+                  {
+                    "type": "ethical"
+                  }
+                ],
+                "affects": [
+                  "model-a"
+                ],
+                "inherentRisk": {
+                  "impact": {
+                    "level": "moderate",
+                    "categories": [
+                      "fairness"
+                    ]
+                  }
+                }
+              }
+            }
+          ],
+          "match_count": 1
+        },
+        {
+          "index": 22,
+          "native_name": "Environmental Considerations",
+          "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.environmental",
+          "relevance": "recommended",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]"
+          ],
+          "expression_paths": [],
+          "matched_paths": [],
+          "matched_nodes": [],
+          "match_count": 0
+        }
+      ]
+    }
+  ],
+  "diagnostics": {
+    "duplicate_bom_refs": [],
+    "unresolved_refs": [],
+    "external_bom_links": []
+  }
+}
