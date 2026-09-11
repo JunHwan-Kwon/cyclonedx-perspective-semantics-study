@@ -1,0 +1,46 @@
+{
+  "specFormat": "CycloneDX",
+  "specVersion": "2.0",
+  "version": 1,
+  "components": [
+    {
+      "bom-ref": "activity:ibm-gguf-conversion",
+      "type": "application",
+      "name": "IBM GGUF conversion activity",
+      "input": { "ref": "hf:ibm-base@e459acce" },
+      "output": { "ref": "hf:ibm-q4-k-m@c40945d7" }
+    },
+    {
+      "bom-ref": "hf:ibm-base@e459acce",
+      "type": "machine-learning-model",
+      "name": "IBM Granite 4.2 3B"
+    },
+    {
+      "bom-ref": "hf:ibm-q4-k-m@c40945d7",
+      "type": "machine-learning-model",
+      "name": "IBM Granite 4.2 3B Q4_K_M"
+    }
+  ],
+  "formulation": [
+    {
+      "bom-ref": "workflow:ibm-gguf-publication",
+      "name": "IBM GGUF publication example",
+      "activity": { "ref": "activity:ibm-gguf-conversion" }
+    }
+  ],
+  "perspectives": [
+    {
+      "name": "IBM/HF one-hop chain probe",
+      "scopes": [
+        { "name": "Selected formulation", "expressions": ["$.formulation[0]"] }
+      ],
+      "mappings": [
+        {
+          "nativeName": "Referenceable objects",
+          "expression": "$..[?(@['bom-ref'])]",
+          "relevance": "informative"
+        }
+      ]
+    }
+  ]
+}

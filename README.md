@@ -24,6 +24,15 @@ retained input    none
 The before/after input hashes and node sets are recorded in
 [`results/f1-head-transition-comparison.json`](results/f1-head-transition-comparison.json).
 
+Five additional semantic-only fixtures use revision- and SHA-256-pinned IBM
+and Hugging Face subjects to exercise the formulation-scope case. Expression
+and target selection produce the same four-object set: the selected formulation
+plus three objects reached through direct `{ref}` entries. An unrelated fourth
+component is excluded. Separate fixtures record one-hop-only behavior,
+duplicate local identifiers, and an external BOM-Link that is recorded but not
+fetched. Subject identities are in
+[`source/ibm-hf-scope-subjects.json`](source/ibm-hf-scope-subjects.json).
+
 The probe deliberately does not turn `relevance: "required"` into a pass/fail
 decision. Two schema-valid cases demonstrate why a separate completeness rule
 is needed:
@@ -67,6 +76,12 @@ results use repository-relative paths and do not contain workstation paths.
   claimed to validate against #1067 alone.
 - F4 and F6 are semantic-only boundary probes for one-hop closure and external
   BOM-Link handling.
+- F7 and F8 apply expression-based and target-based scopes to the same IBM/HF
+  formulation example and compare their exact intermediate node sets.
+- F9 verifies that references inside a newly reached conversion object do not
+  create a second closure hop.
+- F10 records duplicate `bom-ref` ambiguity; F11 records an external IBM/HF
+  BOM-Link without network retrieval.
 
 ## Interpretation and claim boundary
 

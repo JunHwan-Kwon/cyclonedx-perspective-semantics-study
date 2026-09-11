@@ -57,7 +57,12 @@ const cases = [
   { id: "f2-subject-coverage", file: "fixtures/f2-subject-coverage.json", expected: "valid" },
   { id: "f5-empty-values", file: "fixtures/f5-empty-values.json", expected: "valid" },
   { id: "f4-one-hop-closure", file: "fixtures/f4-one-hop-closure.json", expected: "semantic_only" },
-  { id: "f6-external-bom-link", file: "fixtures/f6-external-bom-link.json", expected: "semantic_only" }
+  { id: "f6-external-bom-link", file: "fixtures/f6-external-bom-link.json", expected: "semantic_only" },
+  { id: "f7-ibm-hf-formulation-expression-scope", file: "fixtures/f7-ibm-hf-formulation-expression-scope.json", expected: "semantic_only" },
+  { id: "f8-ibm-hf-formulation-target-scope", file: "fixtures/f8-ibm-hf-formulation-target-scope.json", expected: "semantic_only" },
+  { id: "f9-ibm-hf-formulation-one-hop-chain", file: "fixtures/f9-ibm-hf-formulation-one-hop-chain.json", expected: "semantic_only" },
+  { id: "f10-ibm-hf-duplicate-reference", file: "fixtures/f10-ibm-hf-duplicate-reference.json", expected: "semantic_only" },
+  { id: "f11-ibm-hf-external-bom-link", file: "fixtures/f11-ibm-hf-external-bom-link.json", expected: "semantic_only" }
 ];
 
 const results = [];

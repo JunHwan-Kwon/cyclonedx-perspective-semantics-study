@@ -1,5 +1,5 @@
 {
-  "record_type": "independent.cyclonedx.pr1067.fixture-summary.v2",
+  "record_type": "independent.cyclonedx.pr1067.fixture-summary.v3",
   "cases": [
     {
       "id": "f1-risk-referrers",
@@ -426,6 +426,75 @@
         [
           {
             "native_name": "Selected objects",
+            "count": 1
+          }
+        ]
+      ]
+    },
+    {
+      "id": "f7-ibm-hf-formulation-expression-scope",
+      "result": "results/f7-ibm-hf-formulation-expression-scope.result.json",
+      "scope_count": 1,
+      "mapping_counts": [
+        [
+          {
+            "native_name": "Referenceable objects",
+            "count": 4
+          },
+          {
+            "native_name": "Selected workflow roles",
+            "count": 3
+          }
+        ]
+      ]
+    },
+    {
+      "id": "f8-ibm-hf-formulation-target-scope",
+      "result": "results/f8-ibm-hf-formulation-target-scope.result.json",
+      "scope_count": 1,
+      "mapping_counts": [
+        [
+          {
+            "native_name": "Referenceable objects",
+            "count": 4
+          }
+        ]
+      ]
+    },
+    {
+      "id": "f9-ibm-hf-formulation-one-hop-chain",
+      "result": "results/f9-ibm-hf-formulation-one-hop-chain.result.json",
+      "scope_count": 1,
+      "mapping_counts": [
+        [
+          {
+            "native_name": "Referenceable objects",
+            "count": 2
+          }
+        ]
+      ]
+    },
+    {
+      "id": "f10-ibm-hf-duplicate-reference",
+      "result": "results/f10-ibm-hf-duplicate-reference.result.json",
+      "scope_count": 1,
+      "mapping_counts": [
+        [
+          {
+            "native_name": "Referenceable objects",
+            "count": 1
+          }
+        ]
+      ]
+    },
+    {
+      "id": "f11-ibm-hf-external-bom-link",
+      "result": "results/f11-ibm-hf-external-bom-link.result.json",
+      "scope_count": 1,
+      "mapping_counts": [
+        [
+          {
+            "native_name": "Referenceable objects",
             "count": 1
           }
         ]

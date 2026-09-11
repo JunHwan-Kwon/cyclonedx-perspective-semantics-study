@@ -1,0 +1,56 @@
+{
+  "specFormat": "CycloneDX",
+  "specVersion": "2.0",
+  "version": 1,
+  "components": [
+    {
+      "bom-ref": "hf:ibm-base@e459acce",
+      "type": "machine-learning-model",
+      "name": "IBM Granite 4.2 3B"
+    },
+    {
+      "bom-ref": "hf:ibm-q4-k-m@c40945d7",
+      "type": "machine-learning-model",
+      "name": "IBM Granite 4.2 3B Q4_K_M"
+    },
+    {
+      "bom-ref": "hf:bartowski-imatrix@40934569",
+      "type": "data",
+      "name": "Bartowski Granite 4.2 3B importance matrix"
+    },
+    {
+      "bom-ref": "hf:bartowski-q4-k-m@40934569",
+      "type": "machine-learning-model",
+      "name": "Unrelated comparison subject"
+    }
+  ],
+  "formulation": [
+    {
+      "bom-ref": "workflow:ibm-gguf-publication",
+      "name": "IBM GGUF publication example",
+      "evidence": [
+        { "role": "base-model", "ref": "hf:ibm-base@e459acce" },
+        { "role": "output", "ref": "hf:ibm-q4-k-m@c40945d7" },
+        { "role": "calibration-artifact", "ref": "hf:bartowski-imatrix@40934569" }
+      ]
+    }
+  ],
+  "perspectives": [
+    {
+      "name": "IBM/HF formulation target-scope probe",
+      "scopes": [
+        {
+          "name": "Selected formulation",
+          "targets": ["workflow:ibm-gguf-publication"]
+        }
+      ],
+      "mappings": [
+        {
+          "nativeName": "Referenceable objects",
+          "expression": "$..[?(@['bom-ref'])]",
+          "relevance": "informative"
+        }
+      ]
+    }
+  ]
+}

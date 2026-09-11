@@ -31,6 +31,12 @@ The DCO result identifies four earlier commits and does not identify commit
   outside the bounded interpretation profile.
 - `dependencies` is unsupported in this bounded probe and is rejected
   fail-closed.
+- In the IBM/HF-derived formulation case, an expression scope and a target
+  scope produce the same exact node set: the formulation plus three directly
+  referenced objects; an unrelated component is excluded.
+- Separate IBM/HF-derived cases preserve the one-hop boundary, diagnose a
+  duplicate local identifier without resolving it, and record an external
+  BOM-Link without fetching it.
 
 ## Questions not resolved by the measurements
 

@@ -6,6 +6,7 @@ import { PR1067_HEAD } from "./upstream.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = async (name) => JSON.parse(await readFile(path.join(root, "results", name), "utf8"));
+const readRoot = async (name) => JSON.parse(await readFile(path.join(root, name), "utf8"));
 const mapping = (report, name) => report.evaluations[0].mappings.find((entry) => entry.native_name === name);
 
 const f1Risk = await read("f1-risk-referrers.result.json");
@@ -34,6 +35,48 @@ assert.equal(f4.evaluations[0].scope.scope_prefixes.includes("$['components'][1]
 const f6 = await read("f6-external-bom-link.result.json");
 assert.equal(f6.diagnostics.external_bom_links.length, 1);
 assert.equal(f6.evaluations[0].scope.scope_prefixes.includes("$['components'][0]"), true);
+
+const ibmHfSubjects = await readRoot("source/ibm-hf-scope-subjects.json");
+assert.equal(ibmHfSubjects.sources.length, 4);
+assert.match(ibmHfSubjects.measurement_snapshot, /evidence-pr990-38dfe9c-gguf-v1/);
+
+const expectedDirectScope = [
+  "$['components'][0]",
+  "$['components'][1]",
+  "$['components'][2]",
+  "$['formulation'][0]"
+];
+const f7 = await read("f7-ibm-hf-formulation-expression-scope.result.json");
+const f8 = await read("f8-ibm-hf-formulation-target-scope.result.json");
+assert.deepEqual(f7.evaluations[0].scope.scope_prefixes, expectedDirectScope);
+assert.deepEqual(f8.evaluations[0].scope.scope_prefixes, expectedDirectScope);
+assert.deepEqual(mapping(f7, "Referenceable objects").matched_paths, expectedDirectScope);
+assert.deepEqual(mapping(f8, "Referenceable objects").matched_paths, expectedDirectScope);
+assert.equal(f7.evaluations[0].scope.scope_prefixes.includes("$['components'][3]"), false);
+assert.deepEqual(mapping(f7, "Selected workflow roles").matched_paths, [
+  "$['formulation'][0]['evidence'][0]['role']",
+  "$['formulation'][0]['evidence'][1]['role']",
+  "$['formulation'][0]['evidence'][2]['role']"
+]);
+
+const f9 = await read("f9-ibm-hf-formulation-one-hop-chain.result.json");
+assert.deepEqual(f9.evaluations[0].scope.scope_prefixes, [
+  "$['components'][0]",
+  "$['formulation'][0]"
+]);
+assert.equal(f9.evaluations[0].scope.scope_prefixes.includes("$['components'][1]"), false);
+assert.equal(f9.evaluations[0].scope.scope_prefixes.includes("$['components'][2]"), false);
+
+const f10 = await read("f10-ibm-hf-duplicate-reference.result.json");
+assert.equal(f10.diagnostics.duplicate_bom_refs.length, 1);
+assert.equal(f10.diagnostics.unresolved_refs.length, 1);
+assert.equal(f10.diagnostics.unresolved_refs[0].reason, "duplicate_bom_ref");
+assert.deepEqual(f10.evaluations[0].scope.scope_prefixes, ["$['formulation'][0]"]);
+
+const f11 = await read("f11-ibm-hf-external-bom-link.result.json");
+assert.equal(f11.diagnostics.external_bom_links.length, 1);
+assert.equal(f11.diagnostics.external_bom_links[0].action, "recorded_not_followed");
+assert.deepEqual(f11.evaluations[0].scope.scope_prefixes, ["$['formulation'][0]"]);
 
 const policies = await read("required-policy-comparison.json");
 assert.equal(policies.record_type, "independent.cyclonedx.pr1067.required-policy-comparison.v2");

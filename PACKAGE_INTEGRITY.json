@@ -24,13 +24,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 3592,
-      "sha256": "7c7716d0236763192a3df8f123114f80a9fa4aa065f77bd2d4730dc96fff8563"
+      "bytes": 4535,
+      "sha256": "23350203aaff59f94b42f45a346014bf54aed437d522ebf4737fdf9b1e037304"
     },
     {
       "path": "REVIEW_EVIDENCE.md",
-      "bytes": 2422,
-      "sha256": "6f422724aa8d97f8e5192c6ef25d6788c1337bef06a01cdd98d2052c8cf0a97c"
+      "bytes": 2812,
+      "sha256": "6fe5d7a7cb024ac14c06b44f636d7b3c4b9138ed2707ad4754d0e0b4237c8466"
     },
     {
       "path": "SOURCE_MANIFEST.json",
@@ -46,6 +46,16 @@
       "path": "fixtures/f1-dataset-refs.json",
       "bytes": 1097,
       "sha256": "dd24914ef8077cbd0b438cac9883b2f9340e197c1fde53c2357fda6935a3d455"
+    },
+    {
+      "path": "fixtures/f10-ibm-hf-duplicate-reference.json",
+      "bytes": 895,
+      "sha256": "ccd0be1780478365c066a95d928ac1fa2b6611aafe5f04a20612189738815b2a"
+    },
+    {
+      "path": "fixtures/f11-ibm-hf-external-bom-link.json",
+      "bytes": 649,
+      "sha256": "4287b7d3f8fdee9de1ae9996b1a118192f069cbbb8209c12900471528d4d2b97"
     },
     {
       "path": "fixtures/f2-subject-coverage.json",
@@ -66,6 +76,21 @@
       "path": "fixtures/f6-external-bom-link.json",
       "bytes": 629,
       "sha256": "645766e87b27adfb6fedafba728780a251855963d58060a364e32d49c273b249"
+    },
+    {
+      "path": "fixtures/f7-ibm-hf-formulation-expression-scope.json",
+      "bytes": 1950,
+      "sha256": "cf14567712caebf318a93b018b89d337f24d691dabcd5e3b9186f146f79754de"
+    },
+    {
+      "path": "fixtures/f8-ibm-hf-formulation-target-scope.json",
+      "bytes": 1441,
+      "sha256": "701da30e9ed087399b494e89c7a0f028d259897a7b3e25b3da79907a8dcc6685"
+    },
+    {
+      "path": "fixtures/f9-ibm-hf-formulation-one-hop-chain.json",
+      "bytes": 1162,
+      "sha256": "9e7ebe6de9382c28ad8c099e45bb5ef66c1095841ca9e6d4214b239e6479290d"
     },
     {
       "path": "package-lock.json",
@@ -93,6 +118,16 @@
       "sha256": "233474c24b8a472fb5ebb45bcab45e98fbea9b0597cf213728f7a5a4069cee4e"
     },
     {
+      "path": "results/f10-ibm-hf-duplicate-reference.result.json",
+      "bytes": 5094,
+      "sha256": "03325a2889922c3bcaca8d5bdbb2baa815032cef3b2cd4f6b147cf693d21949e"
+    },
+    {
+      "path": "results/f11-ibm-hf-external-bom-link.result.json",
+      "bytes": 4778,
+      "sha256": "f86af25fd045e44bc13b032c7cd6b0c7f67450bd2b5afc6144a3420a0028989b"
+    },
+    {
       "path": "results/f2-subject-coverage.result.json",
       "bytes": 19970,
       "sha256": "c95ad5bac81eb8e4b984662a8ccaf95aa5fc015b55c66e976126dffcea0fb743"
@@ -113,14 +148,29 @@
       "sha256": "8983d15857c66ccf25dbc3bff3b6dcae6c5f5f479ca1317368e974a1ba156c7a"
     },
     {
+      "path": "results/f7-ibm-hf-formulation-expression-scope.result.json",
+      "bytes": 8568,
+      "sha256": "2b40672a0d9945724a2991feae115d58f2d054be87b687a5daee7b934980c920"
+    },
+    {
+      "path": "results/f8-ibm-hf-formulation-target-scope.result.json",
+      "bytes": 6778,
+      "sha256": "c77b4963f8ae6f48db8a01b9fcc09a6d27cd11d3a963366621049e66fbbfec52"
+    },
+    {
+      "path": "results/f9-ibm-hf-formulation-one-hop-chain.result.json",
+      "bytes": 5255,
+      "sha256": "6d4e9e39de0077da695ff8d3c984c85d52ef2a97725886c74f02183c1fcc55a9"
+    },
+    {
       "path": "results/fixture-summary.json",
-      "bytes": 10542,
-      "sha256": "516b806422c7dee2f74f720a99d53120bc511a8a7c367b88da489dd364f968db"
+      "bytes": 12204,
+      "sha256": "c94a5f08c02298ae9c72a9eca1b2571ae09aa4ff68a3827fc94571d1fdcfbb6d"
     },
     {
       "path": "results/fixture-validation.json",
-      "bytes": 100252,
-      "sha256": "52d0c7e932c92d05c18a5c98af56cd8967e277886fc9180759010dbba69f4a77"
+      "bytes": 174747,
+      "sha256": "3a3d9948f488a3821714796c1830f43fd78ca1561f6a767fe932789344a1dd77"
     },
     {
       "path": "results/required-policy-comparison.json",
@@ -139,8 +189,8 @@
     },
     {
       "path": "scripts/check-evidence.mjs",
-      "bytes": 3262,
-      "sha256": "3bb3db89635702a68b16a5d80a6bb15ab24a62ba1a81dc7f5019f9c18f782e58"
+      "bytes": 5511,
+      "sha256": "8f616b03ce7d65bb39d5edd4203c6ba9d2c606b4a70ace2adb24d01920c6fc75"
     },
     {
       "path": "scripts/compare-head-transition.mjs",
@@ -164,8 +214,8 @@
     },
     {
       "path": "scripts/run-fixtures.mjs",
-      "bytes": 2024,
-      "sha256": "4a25423900b825a36d7dc5bf0a97cf2d664c478e0d1a74541ac5376f740d3842"
+      "bytes": 2714,
+      "sha256": "9ba3a263d0a5b2f4b794846f074be4966e001f9d038596cd4aafeef1eb479e1f"
     },
     {
       "path": "scripts/upstream.mjs",
@@ -174,8 +224,8 @@
     },
     {
       "path": "scripts/validate-fixtures.mjs",
-      "bytes": 3895,
-      "sha256": "4bd31cb5e8ed1915016adbe280385329df773fcef1d92826aed373fd6c05b6b6"
+      "bytes": 4550,
+      "sha256": "fef0a034ae96b49253ef058badcafba207bdeb93e56e7957a0363eadf062d66e"
     },
     {
       "path": "scripts/verify-integrity.mjs",
@@ -186,6 +236,11 @@
       "path": "source/cyclonedx-perspective-2.0.schema.json",
       "bytes": 38322,
       "sha256": "ad21323b9133f4f7096c76aecf478c786ab0d577f7652579e610d397afb31ce9"
+    },
+    {
+      "path": "source/ibm-hf-scope-subjects.json",
+      "bytes": 1647,
+      "sha256": "7802169c7b043a83eff47094aec4d7b0bdb52ae64d6376c7e5c251b489c90647"
     },
     {
       "path": "source/model-card-perspective.json",

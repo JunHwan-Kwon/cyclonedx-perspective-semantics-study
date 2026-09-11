@@ -1,0 +1,233 @@
+{
+  "record_type": "independent.cyclonedx.pr1067.perspective-evaluation.v2",
+  "normative_status": "non-normative observational evidence",
+  "inputs": {
+    "bom": {
+      "path": "fixtures/f7-ibm-hf-formulation-expression-scope.json",
+      "bytes": 1950,
+      "sha256": "cf14567712caebf318a93b018b89d337f24d691dabcd5e3b9186f146f79754de"
+    },
+    "perspective": null,
+    "application_index": 0,
+    "application_sha256": "351fd1c3ee7553dacdb19e351f7b50d7b480f302380f92acb543c70d883958fd",
+    "definition_sha256": "351fd1c3ee7553dacdb19e351f7b50d7b480f302380f92acb543c70d883958fd"
+  },
+  "engine": {
+    "name": "jsonpath-rfc9535",
+    "version": "1.3.0",
+    "operations": [
+      "paths",
+      "query"
+    ]
+  },
+  "interpretation_profile": {
+    "id": "independent.cyclonedx.pr1067.candidate-interpretation.v2",
+    "normative_status": "non-normative semantic probe",
+    "scope_expression_root": "document root",
+    "target_resolution": "local bom-ref; external BOM-Link recorded but not followed",
+    "scope_reference_entries": "objects with an own string-valued ref property",
+    "scope_reference_closure": "one hop from expression/target seeds; newly resolved nodes are not scanned",
+    "containment": "RFC 9535 normalized-path equality or descendant-token boundary",
+    "refs_restriction": "reference-value path must be inside the current node-set subtrees",
+    "referrers_holder": "object owning the property, or object owning one containing array; nested arrays are outside this bounded profile",
+    "scoped_referrers": "replace the current set with matching referring objects; do not retain input nodes, per #1067 head 7a7d2dd prose",
+    "whole_document_referrers": "identity whenever the current node set contains the document root, including omitted scopes, an explicit $ scope, and a preceding identity step",
+    "duplicate_bom_ref": "diagnostic; ambiguous reference is not resolved",
+    "dependencies": "unsupported in the bounded P0 probe and rejected fail-closed",
+    "required_completeness": "not decided by this evaluator"
+  },
+  "decision_points": [
+    "The prose defines one completeness evaluation per scope but not the required/recommended pass/fail aggregation rule within that scope.",
+    "The scope prose names object entries with a ref property; raw string references are traversed only when a mapping via expression selects them.",
+    "A scope containing several seed subjects does not define whether completeness is collective or per subject.",
+    "Empty selected values have a path match but no defined completeness meaning."
+  ],
+  "document_index": {
+    "node_count": 56,
+    "unique_bom_ref_count": 5,
+    "duplicate_bom_refs": []
+  },
+  "evaluations": [
+    {
+      "scope_index": 0,
+      "scope": {
+        "bom_ref": null,
+        "name": "Selected formulation",
+        "step1_expression_nodes": [
+          {
+            "expression": "$.formulation[0]",
+            "normalized_paths": [
+              "$['formulation'][0]"
+            ]
+          }
+        ],
+        "step2_target_nodes": [],
+        "step3_closure_nodes": [
+          {
+            "from_path": "$['formulation'][0]['evidence'][0]",
+            "ref_value": "hf:ibm-base@e459acce",
+            "to_path": "$['components'][0]",
+            "resolution": "local"
+          },
+          {
+            "from_path": "$['formulation'][0]['evidence'][1]",
+            "ref_value": "hf:ibm-q4-k-m@c40945d7",
+            "to_path": "$['components'][1]",
+            "resolution": "local"
+          },
+          {
+            "from_path": "$['formulation'][0]['evidence'][2]",
+            "ref_value": "hf:bartowski-imatrix@40934569",
+            "to_path": "$['components'][2]",
+            "resolution": "local"
+          }
+        ],
+        "seed_paths": [
+          "$['formulation'][0]"
+        ],
+        "scope_prefixes": [
+          "$['components'][0]",
+          "$['components'][1]",
+          "$['components'][2]",
+          "$['formulation'][0]"
+        ]
+      },
+      "mappings": [
+        {
+          "index": 0,
+          "native_name": "Referenceable objects",
+          "expression": "$..[?(@['bom-ref'])]",
+          "relevance": "informative",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]",
+            "$['components'][1]",
+            "$['components'][2]",
+            "$['formulation'][0]"
+          ],
+          "expression_paths": [
+            "$['components'][0]",
+            "$['components'][1]",
+            "$['components'][2]",
+            "$['components'][3]",
+            "$['formulation'][0]"
+          ],
+          "matched_paths": [
+            "$['components'][0]",
+            "$['components'][1]",
+            "$['components'][2]",
+            "$['formulation'][0]"
+          ],
+          "matched_nodes": [
+            {
+              "path": "$['components'][0]",
+              "value_type": "object",
+              "empty": false,
+              "value": {
+                "bom-ref": "hf:ibm-base@e459acce",
+                "type": "machine-learning-model",
+                "name": "IBM Granite 4.2 3B",
+                "sourceRevision": "e459acceac81e5fe67c07d9cfc72329a332e7eb1"
+              }
+            },
+            {
+              "path": "$['components'][1]",
+              "value_type": "object",
+              "empty": false,
+              "value": {
+                "bom-ref": "hf:ibm-q4-k-m@c40945d7",
+                "type": "machine-learning-model",
+                "name": "IBM Granite 4.2 3B Q4_K_M",
+                "artifactSha256": "e0406663965846ae22a403456eb826ccce5f450840491f71952f18a7cb78e7d5"
+              }
+            },
+            {
+              "path": "$['components'][2]",
+              "value_type": "object",
+              "empty": false,
+              "value": {
+                "bom-ref": "hf:bartowski-imatrix@40934569",
+                "type": "data",
+                "name": "Bartowski Granite 4.2 3B importance matrix",
+                "artifactSha256": "d4c39ccf163db6adbd620619460428c1c447631ac3dfc32e7ce388fe339f37d2"
+              }
+            },
+            {
+              "path": "$['formulation'][0]",
+              "value_type": "object",
+              "empty": false,
+              "value": {
+                "bom-ref": "workflow:ibm-gguf-publication",
+                "name": "IBM GGUF publication example",
+                "evidence": [
+                  {
+                    "role": "base-model",
+                    "ref": "hf:ibm-base@e459acce"
+                  },
+                  {
+                    "role": "output",
+                    "ref": "hf:ibm-q4-k-m@c40945d7"
+                  },
+                  {
+                    "role": "calibration-artifact",
+                    "ref": "hf:bartowski-imatrix@40934569"
+                  }
+                ]
+              }
+            }
+          ],
+          "match_count": 4
+        },
+        {
+          "index": 1,
+          "native_name": "Selected workflow roles",
+          "expression": "$.formulation[*].evidence[*].role",
+          "relevance": "informative",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]",
+            "$['components'][1]",
+            "$['components'][2]",
+            "$['formulation'][0]"
+          ],
+          "expression_paths": [
+            "$['formulation'][0]['evidence'][0]['role']",
+            "$['formulation'][0]['evidence'][1]['role']",
+            "$['formulation'][0]['evidence'][2]['role']"
+          ],
+          "matched_paths": [
+            "$['formulation'][0]['evidence'][0]['role']",
+            "$['formulation'][0]['evidence'][1]['role']",
+            "$['formulation'][0]['evidence'][2]['role']"
+          ],
+          "matched_nodes": [
+            {
+              "path": "$['formulation'][0]['evidence'][0]['role']",
+              "value_type": "string",
+              "empty": false,
+              "value": "base-model"
+            },
+            {
+              "path": "$['formulation'][0]['evidence'][1]['role']",
+              "value_type": "string",
+              "empty": false,
+              "value": "output"
+            },
+            {
+              "path": "$['formulation'][0]['evidence'][2]['role']",
+              "value_type": "string",
+              "empty": false,
+              "value": "calibration-artifact"
+            }
+          ],
+          "match_count": 3
+        }
+      ]
+    }
+  ],
+  "diagnostics": {
+    "duplicate_bom_refs": [],
+    "unresolved_refs": [],
+    "external_bom_links": []
+  }
+}

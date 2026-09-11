@@ -1,0 +1,142 @@
+{
+  "record_type": "independent.cyclonedx.pr1067.perspective-evaluation.v2",
+  "normative_status": "non-normative observational evidence",
+  "inputs": {
+    "bom": {
+      "path": "fixtures/f9-ibm-hf-formulation-one-hop-chain.json",
+      "bytes": 1162,
+      "sha256": "9e7ebe6de9382c28ad8c099e45bb5ef66c1095841ca9e6d4214b239e6479290d"
+    },
+    "perspective": null,
+    "application_index": 0,
+    "application_sha256": "22c0613350de21c84b003166c0146963b0017345a7826d06efd71eab71e97c81",
+    "definition_sha256": "22c0613350de21c84b003166c0146963b0017345a7826d06efd71eab71e97c81"
+  },
+  "engine": {
+    "name": "jsonpath-rfc9535",
+    "version": "1.3.0",
+    "operations": [
+      "paths",
+      "query"
+    ]
+  },
+  "interpretation_profile": {
+    "id": "independent.cyclonedx.pr1067.candidate-interpretation.v2",
+    "normative_status": "non-normative semantic probe",
+    "scope_expression_root": "document root",
+    "target_resolution": "local bom-ref; external BOM-Link recorded but not followed",
+    "scope_reference_entries": "objects with an own string-valued ref property",
+    "scope_reference_closure": "one hop from expression/target seeds; newly resolved nodes are not scanned",
+    "containment": "RFC 9535 normalized-path equality or descendant-token boundary",
+    "refs_restriction": "reference-value path must be inside the current node-set subtrees",
+    "referrers_holder": "object owning the property, or object owning one containing array; nested arrays are outside this bounded profile",
+    "scoped_referrers": "replace the current set with matching referring objects; do not retain input nodes, per #1067 head 7a7d2dd prose",
+    "whole_document_referrers": "identity whenever the current node set contains the document root, including omitted scopes, an explicit $ scope, and a preceding identity step",
+    "duplicate_bom_ref": "diagnostic; ambiguous reference is not resolved",
+    "dependencies": "unsupported in the bounded P0 probe and rejected fail-closed",
+    "required_completeness": "not decided by this evaluator"
+  },
+  "decision_points": [
+    "The prose defines one completeness evaluation per scope but not the required/recommended pass/fail aggregation rule within that scope.",
+    "The scope prose names object entries with a ref property; raw string references are traversed only when a mapping via expression selects them.",
+    "A scope containing several seed subjects does not define whether completeness is collective or per subject.",
+    "Empty selected values have a path match but no defined completeness meaning."
+  ],
+  "document_index": {
+    "node_count": 40,
+    "unique_bom_ref_count": 4,
+    "duplicate_bom_refs": []
+  },
+  "evaluations": [
+    {
+      "scope_index": 0,
+      "scope": {
+        "bom_ref": null,
+        "name": "Selected formulation",
+        "step1_expression_nodes": [
+          {
+            "expression": "$.formulation[0]",
+            "normalized_paths": [
+              "$['formulation'][0]"
+            ]
+          }
+        ],
+        "step2_target_nodes": [],
+        "step3_closure_nodes": [
+          {
+            "from_path": "$['formulation'][0]['activity']",
+            "ref_value": "activity:ibm-gguf-conversion",
+            "to_path": "$['components'][0]",
+            "resolution": "local"
+          }
+        ],
+        "seed_paths": [
+          "$['formulation'][0]"
+        ],
+        "scope_prefixes": [
+          "$['components'][0]",
+          "$['formulation'][0]"
+        ]
+      },
+      "mappings": [
+        {
+          "index": 0,
+          "native_name": "Referenceable objects",
+          "expression": "$..[?(@['bom-ref'])]",
+          "relevance": "informative",
+          "via_steps": [],
+          "evaluation_prefixes": [
+            "$['components'][0]",
+            "$['formulation'][0]"
+          ],
+          "expression_paths": [
+            "$['components'][0]",
+            "$['components'][1]",
+            "$['components'][2]",
+            "$['formulation'][0]"
+          ],
+          "matched_paths": [
+            "$['components'][0]",
+            "$['formulation'][0]"
+          ],
+          "matched_nodes": [
+            {
+              "path": "$['components'][0]",
+              "value_type": "object",
+              "empty": false,
+              "value": {
+                "bom-ref": "activity:ibm-gguf-conversion",
+                "type": "application",
+                "name": "IBM GGUF conversion activity",
+                "input": {
+                  "ref": "hf:ibm-base@e459acce"
+                },
+                "output": {
+                  "ref": "hf:ibm-q4-k-m@c40945d7"
+                }
+              }
+            },
+            {
+              "path": "$['formulation'][0]",
+              "value_type": "object",
+              "empty": false,
+              "value": {
+                "bom-ref": "workflow:ibm-gguf-publication",
+                "name": "IBM GGUF publication example",
+                "activity": {
+                  "ref": "activity:ibm-gguf-conversion"
+                }
+              }
+            }
+          ],
+          "match_count": 2
+        }
+      ]
+    }
+  ],
+  "diagnostics": {
+    "duplicate_bom_refs": [],
+    "unresolved_refs": [],
+    "external_bom_links": []
+  }
+}

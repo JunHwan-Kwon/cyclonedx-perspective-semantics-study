@@ -14,7 +14,12 @@ const cases = [
   { id: "f2-subject-coverage", bom: "fixtures/f2-subject-coverage.json", applicationIndex: 0 },
   { id: "f5-empty-values", bom: "fixtures/f5-empty-values.json", applicationIndex: 0 },
   { id: "f4-one-hop-closure", bom: "fixtures/f4-one-hop-closure.json", applicationIndex: 0, inline: true },
-  { id: "f6-external-bom-link", bom: "fixtures/f6-external-bom-link.json", applicationIndex: 0, inline: true }
+  { id: "f6-external-bom-link", bom: "fixtures/f6-external-bom-link.json", applicationIndex: 0, inline: true },
+  { id: "f7-ibm-hf-formulation-expression-scope", bom: "fixtures/f7-ibm-hf-formulation-expression-scope.json", applicationIndex: 0, inline: true },
+  { id: "f8-ibm-hf-formulation-target-scope", bom: "fixtures/f8-ibm-hf-formulation-target-scope.json", applicationIndex: 0, inline: true },
+  { id: "f9-ibm-hf-formulation-one-hop-chain", bom: "fixtures/f9-ibm-hf-formulation-one-hop-chain.json", applicationIndex: 0, inline: true },
+  { id: "f10-ibm-hf-duplicate-reference", bom: "fixtures/f10-ibm-hf-duplicate-reference.json", applicationIndex: 0, inline: true },
+  { id: "f11-ibm-hf-external-bom-link", bom: "fixtures/f11-ibm-hf-external-bom-link.json", applicationIndex: 0, inline: true }
 ];
 
 const summary = [];
@@ -36,7 +41,7 @@ for (const fixture of cases) {
   });
 }
 await writeFile(path.join(resultsDir, "fixture-summary.json"), `${JSON.stringify({
-  record_type: "independent.cyclonedx.pr1067.fixture-summary.v2",
+  record_type: "independent.cyclonedx.pr1067.fixture-summary.v3",
   cases: summary
 }, null, 2)}\n`);
 process.stdout.write(`${JSON.stringify(summary, null, 2)}\n`);

@@ -1,0 +1,38 @@
+{
+  "specFormat": "CycloneDX",
+  "specVersion": "2.0",
+  "version": 1,
+  "components": [
+    {
+      "bom-ref": "hf:ibm-q4-k-m@c40945d7",
+      "type": "machine-learning-model",
+      "name": "IBM Granite 4.2 3B Q4_K_M copy A"
+    },
+    {
+      "bom-ref": "hf:ibm-q4-k-m@c40945d7",
+      "type": "machine-learning-model",
+      "name": "IBM Granite 4.2 3B Q4_K_M copy B"
+    }
+  ],
+  "formulation": [
+    {
+      "bom-ref": "workflow:duplicate-target",
+      "output": { "ref": "hf:ibm-q4-k-m@c40945d7" }
+    }
+  ],
+  "perspectives": [
+    {
+      "name": "Duplicate bom-ref ambiguity probe",
+      "scopes": [
+        { "name": "Selected formulation", "expressions": ["$.formulation[0]"] }
+      ],
+      "mappings": [
+        {
+          "nativeName": "Referenceable objects",
+          "expression": "$..[?(@['bom-ref'])]",
+          "relevance": "informative"
+        }
+      ]
+    }
+  ]
+}

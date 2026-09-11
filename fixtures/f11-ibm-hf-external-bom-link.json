@@ -1,0 +1,28 @@
+{
+  "specFormat": "CycloneDX",
+  "specVersion": "2.0",
+  "version": 1,
+  "formulation": [
+    {
+      "bom-ref": "workflow:external-hf-subject",
+      "input": {
+        "ref": "urn:cdx:123e4567-e89b-12d3-a456-426614174000/1#hf:ibm-base@e459acce"
+      }
+    }
+  ],
+  "perspectives": [
+    {
+      "name": "External IBM/HF BOM-Link probe",
+      "scopes": [
+        { "name": "Selected formulation", "targets": ["workflow:external-hf-subject"] }
+      ],
+      "mappings": [
+        {
+          "nativeName": "Referenceable objects",
+          "expression": "$..[?(@['bom-ref'])]",
+          "relevance": "informative"
+        }
+      ]
+    }
+  ]
+}
