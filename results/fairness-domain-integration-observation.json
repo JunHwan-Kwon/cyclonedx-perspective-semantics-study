@@ -1,0 +1,73 @@
+{
+  "record_type": "independent.cyclonedx.pr1067.fairness-domain-integration-observation.v1",
+  "normative_status": "observational cross-PR integration check; no schema change is prescribed",
+  "inputs": {
+    "pr1067_risk_schema": {
+      "revision": "d3fca0c0c4750008e2bc250b47f5692caa416d73",
+      "path": "schema/2.0/model/cyclonedx-risk-2.0.schema.json",
+      "local_file": "source/cyclonedx-risk-2.0-pr1067.schema.json",
+      "sha256": "dd8dc750c19d1164fab816c7d9df9727782d11dac84fbceceee76dd8930b1de7",
+      "bytes": 67359
+    },
+    "pr990_risk_schema": {
+      "revision": "38dfe9ca4b9b161510dd98b477dd78e4eefe7ec8",
+      "path": "schema/2.0/model/cyclonedx-risk-2.0.schema.json",
+      "local_file": "source/cyclonedx-risk-2.0-pr990.schema.json",
+      "sha256": "082d296227e95b213e2ec6725ffd1b63f2c37cfb8e05be778249977bc0b029e9",
+      "bytes": 67535
+    },
+    "model_card_catalog": {
+      "revision": "d3fca0c0c4750008e2bc250b47f5692caa416d73",
+      "path": "perspectives/model-card-perspective.json",
+      "local_file": "source/model-card-perspective.json",
+      "sha256": "3fed393fde4167ddb203792530613f3fd804fcecb0b19d4d10be8a3910333b43",
+      "bytes": 14864
+    },
+    "referrers_fixture": {
+      "revision": "d3fca0c0c4750008e2bc250b47f5692caa416d73",
+      "path": "tools/src/test/resources/2.0/valid-perspective-referrers-2.0.json",
+      "local_file": "source/valid-perspective-referrers-2.0.json",
+      "sha256": "37f05b1f51855ee286cef0c10ef97c70717673989e598b6019a9a2994ce1b3e6",
+      "bytes": 2355
+    }
+  },
+  "observations": {
+    "fairness_mapping_expression": "$.risks.risks[?(@.domains[?(@.type=='fairness')])]",
+    "fairness_mapping_via": [
+      {
+        "referrers": "$.risks.risks[*].affects[*]"
+      }
+    ],
+    "pr1067_predefined_risk_domain_contains_fairness": false,
+    "pr990_predefined_risk_domain_contains_fairness": true,
+    "fixture_risks": [
+      {
+        "bom_ref": "risk-a",
+        "name": "Fairness risk A",
+        "domain_types": [
+          "ethical"
+        ],
+        "impact_categories": [
+          "fairness"
+        ]
+      },
+      {
+        "bom_ref": "risk-b",
+        "name": "Fairness risk B",
+        "domain_types": [
+          "ethical"
+        ],
+        "impact_categories": [
+          "fairness"
+        ]
+      }
+    ],
+    "referrers_output_paths": [
+      "$['risks']['risks'][0]"
+    ],
+    "fairness_matched_paths": [],
+    "fairness_match_count": 0
+  },
+  "interpretation": "At the pinned #1067 head the referrers step reaches risk-a, but the revised Fairness Assessments expression selects no node from the unchanged fixture. The fixture declares ethical domains, while fairness is not a predefined riskDomain value in the #1067 risk schema and is present in the pinned #990 risk schema.",
+  "boundary": "This records an integration dependency between the two pinned pull-request heads. It does not classify the revised expression as defective or prescribe merge order."
+}

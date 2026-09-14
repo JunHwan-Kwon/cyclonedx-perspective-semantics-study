@@ -2,6 +2,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { isWithinPrefix } from "./evaluate-perspective.mjs";
+import { PR1067_HEAD } from "./upstream.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const resultsDir = path.join(root, "results");
@@ -41,8 +42,15 @@ function compare(report, nativeName) {
 const f2 = compare(await load("f2-subject-coverage"), "License");
 const f5 = compare(await load("f5-empty-values"), "License");
 const report = {
-  record_type: "independent.cyclonedx.pr1067.required-policy-comparison.v2",
-  normative_status: "candidate-policy comparison; no policy is selected",
+  record_type: "independent.cyclonedx.pr1067.required-policy-comparison.v3",
+  normative_status: "observational replay of candidate policies; this probe does not define conformance",
+  source_interpretation: {
+    head: PR1067_HEAD,
+    direct_mapping_satisfaction: "at least one selected node within the scope",
+    per_subject_verdict: "declare one scope per subject",
+    selected_empty_collection_sufficiency: "consumer policy",
+    traversal_attribution: "not evaluated by these direct-mapping fixtures"
+  },
   definitions: {
     mapping_any_match: "At least one path is selected by the mapping in the scope.",
     per_seed_subject_presence: "Every initial scope seed has at least one selected path, without judging the selected value.",
@@ -52,7 +60,7 @@ const report = {
     { fixture: "F2 model B has no licenses property", ...f2 },
     { fixture: "F5 model has licenses: []", ...f5 }
   ],
-  conclusion: "The prose establishes one completeness evaluation per scope, while the same schema-valid path-presence facts permit different outcomes because aggregation within a multi-subject scope and empty-value treatment are not defined."
+  conclusion: "At d3fca0c the source prose resolves the direct-mapping cases as any-match per scope, with one scope per subject for a per-subject verdict; it leaves the sufficiency of a selected empty collection to consumer policy. The alternative columns remain observational comparisons, not conformance verdicts."
 };
 await mkdir(resultsDir, { recursive: true });
 await writeFile(path.join(resultsDir, "required-policy-comparison.json"), `${JSON.stringify(report, null, 2)}\n`);

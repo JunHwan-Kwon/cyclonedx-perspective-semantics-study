@@ -5,29 +5,52 @@ import path from "node:path";
 import {
   PACKAGE_ROOT as root,
   PR1067_HEAD as head,
+  PR990_HEAD as pr990Head,
   PR990_CROSS_PR_COMMIT as pr990Commit,
   UPSTREAM_SOURCE_ROOT as upstreamSourceRoot
 } from "./upstream.mjs";
 
 const sourceDir = path.join(root, "source");
 const files = [
-  "schema/2.0/model/cyclonedx-perspective-2.0.schema.json",
-  "perspectives/model-card-perspective.json",
-  "tools/src/test/resources/2.0/valid-perspective-referrers-2.0.json"
+  {
+    revision: head,
+    path: "schema/2.0/model/cyclonedx-perspective-2.0.schema.json",
+    local_file: "source/cyclonedx-perspective-2.0.schema.json"
+  },
+  {
+    revision: head,
+    path: "perspectives/model-card-perspective.json",
+    local_file: "source/model-card-perspective.json"
+  },
+  {
+    revision: head,
+    path: "tools/src/test/resources/2.0/valid-perspective-referrers-2.0.json",
+    local_file: "source/valid-perspective-referrers-2.0.json"
+  },
+  {
+    revision: head,
+    path: "schema/2.0/model/cyclonedx-risk-2.0.schema.json",
+    local_file: "source/cyclonedx-risk-2.0-pr1067.schema.json"
+  },
+  {
+    revision: pr990Head,
+    path: "schema/2.0/model/cyclonedx-risk-2.0.schema.json",
+    local_file: "source/cyclonedx-risk-2.0-pr990.schema.json"
+  }
 ];
 
 await mkdir(sourceDir, { recursive: true });
 const records = [];
-for (const remotePath of files) {
-  const url = `https://raw.githubusercontent.com/CycloneDX/specification/${head}/${remotePath}`;
+for (const file of files) {
+  const url = `https://raw.githubusercontent.com/CycloneDX/specification/${file.revision}/${file.path}`;
   const response = await fetch(url, { redirect: "follow" });
   if (!response.ok) throw new Error(`Failed ${response.status} ${url}`);
   const bytes = Buffer.from(await response.arrayBuffer());
-  const filename = remotePath.split("/").at(-1);
-  await writeFile(path.join(sourceDir, filename), bytes);
+  await writeFile(path.join(root, file.local_file), bytes);
   records.push({
-    path: remotePath,
-    local_file: `source/${filename}`,
+    revision: file.revision,
+    path: file.path,
+    local_file: file.local_file,
     url,
     bytes: bytes.length,
     sha256: createHash("sha256").update(bytes).digest("hex")
@@ -57,12 +80,14 @@ const cacheDir = path.dirname(upstreamSourceRoot);
 const archiveUrl = `https://codeload.github.com/CycloneDX/specification/zip/${head}`;
 let sourceSnapshotReused = false;
 try {
-  const existingPinnedFiles = await Promise.all(files.map(async (remotePath) => {
-    const bytes = await readFile(path.join(upstreamSourceRoot, ...remotePath.split("/")));
+  const currentHeadFiles = files.filter((file) => file.revision === head);
+  const currentHeadRecords = records.filter((record) => record.revision === head);
+  const existingPinnedFiles = await Promise.all(currentHeadFiles.map(async (file) => {
+    const bytes = await readFile(path.join(upstreamSourceRoot, ...file.path.split("/")));
     return createHash("sha256").update(bytes).digest("hex");
   }));
   await readFile(path.join(upstreamSourceRoot, "schema", "2.0", "cyclonedx-2.0.schema.json"));
-  sourceSnapshotReused = existingPinnedFiles.every((digest, index) => digest === records[index].sha256);
+  sourceSnapshotReused = existingPinnedFiles.every((digest, index) => digest === currentHeadRecords[index].sha256);
 } catch {
   sourceSnapshotReused = false;
 }
@@ -121,7 +146,7 @@ if (!sourceSnapshotReused) {
   }
   validationSourceSnapshot = {
     revision: head,
-    transport: previousSnapshot?.transport || "existing snapshot verified against the three immutable pinned files",
+    transport: previousSnapshot?.transport || "existing snapshot verified against the four immutable files pinned to the PR #1067 head",
     ...(previousSnapshot?.transport_url ? { transport_url: previousSnapshot.transport_url } : {}),
     ...(previousSnapshot?.transport_bytes ? { transport_bytes: previousSnapshot.transport_bytes } : {}),
     ...(previousSnapshot?.transport_sha256 ? { transport_sha256: previousSnapshot.transport_sha256 } : {}),
@@ -144,6 +169,7 @@ const manifest = {
   },
   cross_pr_commit: {
     pull_request: 990,
+    head: pr990Head,
     commit: pr990Commit
   }
 };

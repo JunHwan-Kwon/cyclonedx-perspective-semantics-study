@@ -1,6 +1,13 @@
 {
-  "record_type": "independent.cyclonedx.pr1067.required-policy-comparison.v2",
-  "normative_status": "candidate-policy comparison; no policy is selected",
+  "record_type": "independent.cyclonedx.pr1067.required-policy-comparison.v3",
+  "normative_status": "observational replay of candidate policies; this probe does not define conformance",
+  "source_interpretation": {
+    "head": "d3fca0c0c4750008e2bc250b47f5692caa416d73",
+    "direct_mapping_satisfaction": "at least one selected node within the scope",
+    "per_subject_verdict": "declare one scope per subject",
+    "selected_empty_collection_sufficiency": "consumer policy",
+    "traversal_attribution": "not evaluated by these direct-mapping fixtures"
+  },
   "definitions": {
     "mapping_any_match": "At least one path is selected by the mapping in the scope.",
     "per_seed_subject_presence": "Every initial scope seed has at least one selected path, without judging the selected value.",
@@ -48,5 +55,5 @@
       ]
     }
   ],
-  "conclusion": "The prose establishes one completeness evaluation per scope, while the same schema-valid path-presence facts permit different outcomes because aggregation within a multi-subject scope and empty-value treatment are not defined."
+  "conclusion": "At d3fca0c the source prose resolves the direct-mapping cases as any-match per scope, with one scope per subject for a per-subject verdict; it leaves the sufficiency of a selected empty collection to consumer policy. The alternative columns remain observational comparisons, not conformance verdicts."
 }

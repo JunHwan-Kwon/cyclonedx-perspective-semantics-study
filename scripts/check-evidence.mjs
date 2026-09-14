@@ -10,7 +10,7 @@ const readRoot = async (name) => JSON.parse(await readFile(path.join(root, name)
 const mapping = (report, name) => report.evaluations[0].mappings.find((entry) => entry.native_name === name);
 
 const f1Risk = await read("f1-risk-referrers.result.json");
-assert.equal(f1Risk.interpretation_profile.scoped_referrers, "replace the current set with matching referring objects; do not retain input nodes, per #1067 head 7a7d2dd prose");
+assert.equal(f1Risk.interpretation_profile.scoped_referrers, "replace the current set with matching referring objects; do not retain input nodes, per #1067 head d3fca0c prose");
 assert.equal(f1Risk.record_type, "independent.cyclonedx.pr1067.perspective-evaluation.v2");
 assert.equal(f1Risk.interpretation_profile.id, "independent.cyclonedx.pr1067.candidate-interpretation.v2");
 assert.match(f1Risk.interpretation_profile.whole_document_referrers, /identity whenever the current node set contains the document root/);
@@ -19,6 +19,8 @@ assert.deepEqual(mapping(f1Risk, "Ethical Considerations").matched_paths, ["$['r
 assert.deepEqual(mapping(f1Risk, "Ethical Considerations").via_steps[0].input_paths, ["$['components'][0]"]);
 assert.deepEqual(mapping(f1Risk, "Ethical Considerations").via_steps[0].output_paths, ["$['risks']['risks'][0]"]);
 assert.equal(mapping(f1Risk, "Ethical Considerations").via_steps[0].output_paths.includes("$['components'][0]"), false);
+assert.deepEqual(mapping(f1Risk, "Fairness Assessments").via_steps[0].output_paths, ["$['risks']['risks'][0]"]);
+assert.deepEqual(mapping(f1Risk, "Fairness Assessments").matched_paths, []);
 
 const f1Dataset = await read("f1-dataset-refs.result.json");
 assert.deepEqual(mapping(f1Dataset, "Dataset Identity and Licensing").evaluation_prefixes, ["$['components'][2]"]);
@@ -79,7 +81,10 @@ assert.equal(f11.diagnostics.external_bom_links[0].action, "recorded_not_followe
 assert.deepEqual(f11.evaluations[0].scope.scope_prefixes, ["$['formulation'][0]"]);
 
 const policies = await read("required-policy-comparison.json");
-assert.equal(policies.record_type, "independent.cyclonedx.pr1067.required-policy-comparison.v2");
+assert.equal(policies.record_type, "independent.cyclonedx.pr1067.required-policy-comparison.v3");
+assert.equal(policies.source_interpretation.head, PR1067_HEAD);
+assert.equal(policies.source_interpretation.direct_mapping_satisfaction, "at least one selected node within the scope");
+assert.equal(policies.source_interpretation.selected_empty_collection_sufficiency, "consumer policy");
 assert.equal(Object.hasOwn(policies.definitions, "per_expanded_target_non_empty"), false);
 assert.deepEqual(policies.matrix.map((row) => [
   row.mapping_any_match,
@@ -92,7 +97,20 @@ assert.deepEqual(policies.matrix.map((row) => [
 
 const transition = await read("f1-head-transition-comparison.json");
 assert.equal(transition.to_head, PR1067_HEAD);
-assert.equal(transition.f1_referrers_trace.node_selection_unchanged, true);
-assert.deepEqual(transition.file_comparison.map((item) => item.byte_identity_unchanged), [false, true, true]);
+assert.equal(transition.f1_referrers_trace.node_selection_unchanged, false);
+assert.equal(transition.f1_referrers_trace.traversal_node_sets_unchanged, true);
+assert.equal(transition.f1_referrers_trace.mapping_selections_unchanged, false);
+assert.deepEqual(transition.f1_referrers_trace.mapping_selection_comparison.map((item) => [item.native_name, item.unchanged]), [
+  ["Ethical Considerations", true],
+  ["Fairness Assessments", false]
+]);
+assert.deepEqual(transition.file_comparison.map((item) => item.byte_identity_unchanged), [false, false, true]);
+
+const fairnessIntegration = await read("fairness-domain-integration-observation.json");
+assert.equal(fairnessIntegration.observations.pr1067_predefined_risk_domain_contains_fairness, false);
+assert.equal(fairnessIntegration.observations.pr990_predefined_risk_domain_contains_fairness, true);
+assert.deepEqual(fairnessIntegration.observations.referrers_output_paths, ["$['risks']['risks'][0]"]);
+assert.deepEqual(fairnessIntegration.observations.fairness_matched_paths, []);
+assert.equal(fairnessIntegration.observations.fairness_match_count, 0);
 
 process.stdout.write("PR #1067 evidence checks passed.\n");

@@ -2,8 +2,8 @@
   "record_type": "independent.cyclonedx.pr1067.fixture-validation.v1",
   "validator": {
     "implementation": "Ajv 2020",
-    "source_snapshot": ".cache/specification-pr1067-7a7d2dd-source-v2",
-    "source_head": "7a7d2dd599968e528349ca3cf262120da2831ca8",
+    "source_snapshot": ".cache/specification-pr1067-d3fca0c-source-v2",
+    "source_head": "d3fca0c0c4750008e2bc250b47f5692caa416d73",
     "root_schema": {
       "path": "upstream/schema/2.0/cyclonedx-2.0.schema.json",
       "bytes": 4592,

@@ -2,60 +2,79 @@
   "record_type": "independent.cyclonedx.pr1067.source-manifest.v1",
   "repository": "CycloneDX/specification",
   "pull_request": 1067,
-  "head": "7a7d2dd599968e528349ca3cf262120da2831ca8",
+  "head": "d3fca0c0c4750008e2bc250b47f5692caa416d73",
   "immutable_inputs": true,
   "files": [
     {
+      "revision": "d3fca0c0c4750008e2bc250b47f5692caa416d73",
       "path": "schema/2.0/model/cyclonedx-perspective-2.0.schema.json",
       "local_file": "source/cyclonedx-perspective-2.0.schema.json",
-      "url": "https://raw.githubusercontent.com/CycloneDX/specification/7a7d2dd599968e528349ca3cf262120da2831ca8/schema/2.0/model/cyclonedx-perspective-2.0.schema.json",
-      "bytes": 38322,
-      "sha256": "ad21323b9133f4f7096c76aecf478c786ab0d577f7652579e610d397afb31ce9"
+      "url": "https://raw.githubusercontent.com/CycloneDX/specification/d3fca0c0c4750008e2bc250b47f5692caa416d73/schema/2.0/model/cyclonedx-perspective-2.0.schema.json",
+      "bytes": 38669,
+      "sha256": "6ec869e7d1a2e162fa7e35f02c0dbf99319bc593f1e2e0af31c4711a4bd017e0"
     },
     {
+      "revision": "d3fca0c0c4750008e2bc250b47f5692caa416d73",
       "path": "perspectives/model-card-perspective.json",
       "local_file": "source/model-card-perspective.json",
-      "url": "https://raw.githubusercontent.com/CycloneDX/specification/7a7d2dd599968e528349ca3cf262120da2831ca8/perspectives/model-card-perspective.json",
-      "bytes": 14504,
-      "sha256": "a638e7753ec79d303cfecde3ecc2c06f984247ce4b6f49e7b55bdc253af70f51"
+      "url": "https://raw.githubusercontent.com/CycloneDX/specification/d3fca0c0c4750008e2bc250b47f5692caa416d73/perspectives/model-card-perspective.json",
+      "bytes": 14864,
+      "sha256": "3fed393fde4167ddb203792530613f3fd804fcecb0b19d4d10be8a3910333b43"
     },
     {
+      "revision": "d3fca0c0c4750008e2bc250b47f5692caa416d73",
       "path": "tools/src/test/resources/2.0/valid-perspective-referrers-2.0.json",
       "local_file": "source/valid-perspective-referrers-2.0.json",
-      "url": "https://raw.githubusercontent.com/CycloneDX/specification/7a7d2dd599968e528349ca3cf262120da2831ca8/tools/src/test/resources/2.0/valid-perspective-referrers-2.0.json",
+      "url": "https://raw.githubusercontent.com/CycloneDX/specification/d3fca0c0c4750008e2bc250b47f5692caa416d73/tools/src/test/resources/2.0/valid-perspective-referrers-2.0.json",
       "bytes": 2355,
       "sha256": "37f05b1f51855ee286cef0c10ef97c70717673989e598b6019a9a2994ce1b3e6"
+    },
+    {
+      "revision": "d3fca0c0c4750008e2bc250b47f5692caa416d73",
+      "path": "schema/2.0/model/cyclonedx-risk-2.0.schema.json",
+      "local_file": "source/cyclonedx-risk-2.0-pr1067.schema.json",
+      "url": "https://raw.githubusercontent.com/CycloneDX/specification/d3fca0c0c4750008e2bc250b47f5692caa416d73/schema/2.0/model/cyclonedx-risk-2.0.schema.json",
+      "bytes": 67359,
+      "sha256": "dd8dc750c19d1164fab816c7d9df9727782d11dac84fbceceee76dd8930b1de7"
+    },
+    {
+      "revision": "38dfe9ca4b9b161510dd98b477dd78e4eefe7ec8",
+      "path": "schema/2.0/model/cyclonedx-risk-2.0.schema.json",
+      "local_file": "source/cyclonedx-risk-2.0-pr990.schema.json",
+      "url": "https://raw.githubusercontent.com/CycloneDX/specification/38dfe9ca4b9b161510dd98b477dd78e4eefe7ec8/schema/2.0/model/cyclonedx-risk-2.0.schema.json",
+      "bytes": 67535,
+      "sha256": "082d296227e95b213e2ec6725ffd1b63f2c37cfb8e05be778249977bc0b029e9"
     }
   ],
   "validation_source_snapshot": {
-    "revision": "7a7d2dd599968e528349ca3cf262120da2831ca8",
+    "revision": "d3fca0c0c4750008e2bc250b47f5692caa416d73",
     "transport": "GitHub codeload zip of the immutable commit; entries extracted only after root and path-boundary validation",
-    "transport_url": "https://codeload.github.com/CycloneDX/specification/zip/7a7d2dd599968e528349ca3cf262120da2831ca8",
-    "transport_bytes": 3456721,
-    "transport_sha256": "64685a7f052d82e1d64fc12998453debb7211cc1076f92b615dc54495a0e406b",
-    "local_directory_ignored": ".cache/specification-pr1067-7a7d2dd-source-v2",
-    "reused_existing_verified_snapshot": false
+    "transport_url": "https://codeload.github.com/CycloneDX/specification/zip/d3fca0c0c4750008e2bc250b47f5692caa416d73",
+    "transport_bytes": 3456966,
+    "transport_sha256": "c968c8d350895b192a66ca1bed3c6ce492637da027db62617f064257ec0e2c68",
+    "local_directory_ignored": ".cache/specification-pr1067-d3fca0c-source-v2",
+    "reused_existing_verified_snapshot": true
   },
   "mutable_observations": {
-    "captured_at": "2026-09-11T00:05:32.960Z",
+    "captured_at": "2026-09-14T04:57:35.592Z",
     "files": [
       {
         "url": "https://api.github.com/repos/CycloneDX/specification/pulls/1067",
         "local_file": "source/upstream-state/pr-1067.json",
         "bytes": 32431,
-        "sha256": "77d712fd2b91834926be4272daeb1dba5c5141eeee64c86643360e7b28e18dee"
+        "sha256": "35479eca9f9f6eee9055e737cdbb08e3979f81ddb6fc8ec471f3dc8383617c9e"
       },
       {
-        "url": "https://api.github.com/repos/CycloneDX/specification/commits/7a7d2dd599968e528349ca3cf262120da2831ca8/check-runs",
+        "url": "https://api.github.com/repos/CycloneDX/specification/commits/d3fca0c0c4750008e2bc250b47f5692caa416d73/check-runs",
         "local_file": "source/upstream-state/pr-1067-check-runs.json",
-        "bytes": 13481,
-        "sha256": "403dd6619e648ba392c3f26837e7b87141c161e1c18e97c7cdef12bdf696ad3e"
+        "bytes": 13837,
+        "sha256": "d86e27aec3adeab455bf52b5def06457bcebeb6983534a31e112404ea4e1b119"
       },
       {
         "url": "https://api.github.com/repos/CycloneDX/specification/pulls/990",
         "local_file": "source/upstream-state/pr-990.json",
-        "bytes": 21323,
-        "sha256": "2c30225a1ca477d56e0cd9e68a40a6c6b057bbccf1de4110f6c8f285ccb9f5c3"
+        "bytes": 21324,
+        "sha256": "f03c2266f6f1e753be510fb89c1c44fb7b64fed2ad2fa56d53b7d3a913a2f84b"
       },
       {
         "url": "https://api.github.com/repos/CycloneDX/specification/commits/f6d07fef1cf6b7342d6debf909c1b5d35977b95d",
@@ -67,6 +86,7 @@
   },
   "cross_pr_commit": {
     "pull_request": 990,
+    "head": "38dfe9ca4b9b161510dd98b477dd78e4eefe7ec8",
     "commit": "f6d07fef1cf6b7342d6debf909c1b5d35977b95d"
   }
 }

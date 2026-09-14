@@ -26,6 +26,15 @@ function selectMapping(mapping) {
   };
 }
 
+function selectTraversal(mapping) {
+  const selected = selectMapping(mapping);
+  return {
+    native_name: selected.native_name,
+    via_steps: selected.via_steps,
+    evaluation_prefixes: selected.evaluation_prefixes
+  };
+}
+
 const evaluation = current.evaluations[0];
 const currentTrace = {
   scope: {
@@ -38,6 +47,26 @@ const currentTrace = {
 };
 const baselineTrace = { scope: baseline.scope, mappings: baseline.mappings };
 const nodeSelectionUnchanged = JSON.stringify(currentTrace) === JSON.stringify(baselineTrace);
+const baselineTraversal = {
+  scope: baseline.scope,
+  mappings: baseline.mappings.map(selectTraversal)
+};
+const currentTraversal = {
+  scope: currentTrace.scope,
+  mappings: currentTrace.mappings.map(selectTraversal)
+};
+const traversalNodeSetsUnchanged = JSON.stringify(currentTraversal) === JSON.stringify(baselineTraversal);
+const mappingSelectionComparison = baseline.mappings.map((before) => {
+  const after = currentTrace.mappings.find((mapping) => mapping.native_name === before.native_name);
+  if (!after) throw new Error(`Missing current mapping ${before.native_name}`);
+  return {
+    native_name: before.native_name,
+    before_matched_paths: before.matched_paths,
+    after_matched_paths: after.matched_paths,
+    unchanged: JSON.stringify(before.matched_paths) === JSON.stringify(after.matched_paths)
+  };
+});
+const mappingSelectionsUnchanged = mappingSelectionComparison.every((entry) => entry.unchanged);
 
 const sourceByPath = new Map(manifest.files.map((entry) => [entry.path, entry]));
 const fileComparison = [
@@ -68,20 +97,26 @@ const fileComparison = [
 });
 
 const report = {
-  record_type: "independent.cyclonedx.pr1067.head-transition-comparison.v1",
-  normative_status: "observational comparison; no completeness policy selected",
+  record_type: "independent.cyclonedx.pr1067.head-transition-comparison.v2",
+  normative_status: "observational comparison; source changes and executable node sets are reported separately",
   from_head: baseline.head,
   to_head: PR1067_HEAD,
   file_comparison: fileComparison,
   f1_referrers_trace: {
     node_selection_unchanged: nodeSelectionUnchanged,
+    traversal_node_sets_unchanged: traversalNodeSetsUnchanged,
+    mapping_selections_unchanged: mappingSelectionsUnchanged,
     comparison_scope: "scope seeds/prefixes plus candidate, restricted, output, edge, evaluation, and matched paths for the two referrers mappings",
+    traversal_comparison_scope: "scope seeds/prefixes plus candidate, restricted, output, edge, and evaluation paths, excluding the final mapping expression matches",
+    mapping_selection_comparison: mappingSelectionComparison,
     before: baselineTrace,
     after: currentTrace
   },
-  conclusion: nodeSelectionUnchanged
-    ? `F1 referrers node-selection results confirmed unchanged at ${PR1067_HEAD.slice(0, 7)}; the schema bytes changed while the catalog and fixture bytes did not.`
-    : `F1 referrers node-selection results changed at ${PR1067_HEAD.slice(0, 7)}; inspect the recorded before/after traces.`
+  conclusion: traversalNodeSetsUnchanged && !mappingSelectionsUnchanged
+    ? `At ${PR1067_HEAD.slice(0, 7)}, the F1 referrers traversal and evaluation sets are unchanged, while the final mapping selection changes for the revised Fairness Assessments expression; inspect the per-mapping matched paths.`
+    : nodeSelectionUnchanged
+      ? `F1 referrers traversal and final mapping selections are unchanged at ${PR1067_HEAD.slice(0, 7)}.`
+      : `F1 traversal or mapping-selection results changed at ${PR1067_HEAD.slice(0, 7)}; inspect the recorded before/after traces.`
 };
 
 assert.equal(manifest.head, PR1067_HEAD);
@@ -90,5 +125,7 @@ process.stdout.write(`${JSON.stringify({
   from_head: report.from_head,
   to_head: report.to_head,
   node_selection_unchanged: nodeSelectionUnchanged,
+  traversal_node_sets_unchanged: traversalNodeSetsUnchanged,
+  mapping_selections_unchanged: mappingSelectionsUnchanged,
   file_comparison: fileComparison.map(({ role, byte_identity_unchanged }) => ({ role, byte_identity_unchanged }))
 }, null, 2)}\n`);

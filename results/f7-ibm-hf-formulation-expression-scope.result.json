@@ -30,11 +30,11 @@
     "containment": "RFC 9535 normalized-path equality or descendant-token boundary",
     "refs_restriction": "reference-value path must be inside the current node-set subtrees",
     "referrers_holder": "object owning the property, or object owning one containing array; nested arrays are outside this bounded profile",
-    "scoped_referrers": "replace the current set with matching referring objects; do not retain input nodes, per #1067 head 7a7d2dd prose",
+    "scoped_referrers": "replace the current set with matching referring objects; do not retain input nodes, per #1067 head d3fca0c prose",
     "whole_document_referrers": "identity whenever the current node set contains the document root, including omitted scopes, an explicit $ scope, and a preceding identity step",
     "duplicate_bom_ref": "diagnostic; ambiguous reference is not resolved",
     "dependencies": "unsupported in the bounded P0 probe and rejected fail-closed",
-    "required_completeness": "not decided by this evaluator"
+    "required_completeness": "not decided by this evaluator; #1067 head d3fca0c states any-match per scope, one scope per subject for a per-subject verdict, and consumer policy for empty-value sufficiency"
   },
   "decision_points": [
     "The prose defines one completeness evaluation per scope but not the required/recommended pass/fail aggregation rule within that scope.",

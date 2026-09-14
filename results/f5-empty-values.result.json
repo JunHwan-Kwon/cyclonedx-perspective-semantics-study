@@ -9,12 +9,12 @@
     },
     "perspective": {
       "path": "source/model-card-perspective.json",
-      "bytes": 14504,
-      "sha256": "a638e7753ec79d303cfecde3ecc2c06f984247ce4b6f49e7b55bdc253af70f51"
+      "bytes": 14864,
+      "sha256": "3fed393fde4167ddb203792530613f3fd804fcecb0b19d4d10be8a3910333b43"
     },
     "application_index": 0,
     "application_sha256": "b9ebe45fe846e09cbf20dc3543708196cbce68f73078cf1966a5a01b00375b60",
-    "definition_sha256": "ef5353f6c96db99adae93804c9fd1f487dfdb3ce88a96e7a0e0914c9eae0792c"
+    "definition_sha256": "4826afd179132c470b3200cec7c490b752a9ec3d2c540d3ccea2b7760a2f35e0"
   },
   "engine": {
     "name": "jsonpath-rfc9535",
@@ -34,11 +34,11 @@
     "containment": "RFC 9535 normalized-path equality or descendant-token boundary",
     "refs_restriction": "reference-value path must be inside the current node-set subtrees",
     "referrers_holder": "object owning the property, or object owning one containing array; nested arrays are outside this bounded profile",
-    "scoped_referrers": "replace the current set with matching referring objects; do not retain input nodes, per #1067 head 7a7d2dd prose",
+    "scoped_referrers": "replace the current set with matching referring objects; do not retain input nodes, per #1067 head d3fca0c prose",
     "whole_document_referrers": "identity whenever the current node set contains the document root, including omitted scopes, an explicit $ scope, and a preceding identity step",
     "duplicate_bom_ref": "diagnostic; ambiguous reference is not resolved",
     "dependencies": "unsupported in the bounded P0 probe and rejected fail-closed",
-    "required_completeness": "not decided by this evaluator"
+    "required_completeness": "not decided by this evaluator; #1067 head d3fca0c states any-match per scope, one scope per subject for a per-subject verdict, and consumer policy for empty-value sufficiency"
   },
   "decision_points": [
     "The prose defines one completeness evaluation per scope but not the required/recommended pass/fail aggregation rule within that scope.",
@@ -500,7 +500,7 @@
         {
           "index": 21,
           "native_name": "Fairness Assessments",
-          "expression": "$.risks.risks[?(@.inherentRisk.impact.categories[?(@=='fairness' || @=='bias')])]",
+          "expression": "$.risks.risks[?(@.domains[?(@.type=='fairness')])]",
           "relevance": "recommended",
           "via_steps": [
             {

@@ -9,7 +9,7 @@
   "scripts": {
     "capture": "node scripts/capture-pr1067-sources.mjs",
     "evaluate": "node scripts/run-fixtures.mjs",
-    "compare": "node scripts/compare-required-policies.mjs && node scripts/compare-head-transition.mjs",
+    "compare": "node scripts/compare-required-policies.mjs && node scripts/compare-head-transition.mjs && node scripts/analyze-fairness-integration.mjs",
     "validate:fixtures": "node scripts/validate-fixtures.mjs",
     "test": "node --test tests/*.test.mjs",
     "integrity": "node scripts/build-integrity.mjs",

@@ -1,24 +1,24 @@
 {
-  "record_type": "independent.cyclonedx.pr1067.head-transition-comparison.v1",
-  "normative_status": "observational comparison; no completeness policy selected",
+  "record_type": "independent.cyclonedx.pr1067.head-transition-comparison.v2",
+  "normative_status": "observational comparison; source changes and executable node sets are reported separately",
   "from_head": "fdc2bd6a27dd1d8d120cd3b9843323eccdb431cc",
-  "to_head": "7a7d2dd599968e528349ca3cf262120da2831ca8",
+  "to_head": "d3fca0c0c4750008e2bc250b47f5692caa416d73",
   "file_comparison": [
     {
       "role": "perspective schema",
       "path": "schema/2.0/model/cyclonedx-perspective-2.0.schema.json",
       "before_sha256": "7c165e94fa17245e6dc5ae423554eebd5d1a24f115f3fe9582f8bb9936c7110e",
-      "after_sha256": "ad21323b9133f4f7096c76aecf478c786ab0d577f7652579e610d397afb31ce9",
-      "bytes_after": 38322,
+      "after_sha256": "6ec869e7d1a2e162fa7e35f02c0dbf99319bc593f1e2e0af31c4711a4bd017e0",
+      "bytes_after": 38669,
       "byte_identity_unchanged": false
     },
     {
       "role": "model-card catalog",
       "path": "perspectives/model-card-perspective.json",
       "before_sha256": "a638e7753ec79d303cfecde3ecc2c06f984247ce4b6f49e7b55bdc253af70f51",
-      "after_sha256": "a638e7753ec79d303cfecde3ecc2c06f984247ce4b6f49e7b55bdc253af70f51",
-      "bytes_after": 14504,
-      "byte_identity_unchanged": true
+      "after_sha256": "3fed393fde4167ddb203792530613f3fd804fcecb0b19d4d10be8a3910333b43",
+      "bytes_after": 14864,
+      "byte_identity_unchanged": false
     },
     {
       "role": "referrers fixture",
@@ -30,8 +30,31 @@
     }
   ],
   "f1_referrers_trace": {
-    "node_selection_unchanged": true,
+    "node_selection_unchanged": false,
+    "traversal_node_sets_unchanged": true,
+    "mapping_selections_unchanged": false,
     "comparison_scope": "scope seeds/prefixes plus candidate, restricted, output, edge, evaluation, and matched paths for the two referrers mappings",
+    "traversal_comparison_scope": "scope seeds/prefixes plus candidate, restricted, output, edge, and evaluation paths, excluding the final mapping expression matches",
+    "mapping_selection_comparison": [
+      {
+        "native_name": "Ethical Considerations",
+        "before_matched_paths": [
+          "$['risks']['risks'][0]"
+        ],
+        "after_matched_paths": [
+          "$['risks']['risks'][0]"
+        ],
+        "unchanged": true
+      },
+      {
+        "native_name": "Fairness Assessments",
+        "before_matched_paths": [
+          "$['risks']['risks'][0]"
+        ],
+        "after_matched_paths": [],
+        "unchanged": false
+      }
+    ],
     "before": {
       "scope": {
         "seed_paths": [
@@ -202,12 +225,10 @@
           "evaluation_prefixes": [
             "$['risks']['risks'][0]"
           ],
-          "matched_paths": [
-            "$['risks']['risks'][0]"
-          ]
+          "matched_paths": []
         }
       ]
     }
   },
-  "conclusion": "F1 referrers node-selection results confirmed unchanged at 7a7d2dd; the schema bytes changed while the catalog and fixture bytes did not."
+  "conclusion": "At d3fca0c, the F1 referrers traversal and evaluation sets are unchanged, while the final mapping selection changes for the revised Fairness Assessments expression; inspect the per-mapping matched paths."
 }

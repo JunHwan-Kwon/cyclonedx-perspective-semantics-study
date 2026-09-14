@@ -5,24 +5,34 @@ scope and traversal prose in CycloneDX specification PR #1067. It is evidence
 for review, not a CycloneDX reference implementation or a product exporter.
 
 The current evidence is pinned to commit
-`7a7d2dd599968e528349ca3cf262120da2831ca8`.
+`d3fca0c0c4750008e2bc250b47f5692caa416d73`.
 
 ## Result at the pinned head
 
-The `referrers` description changed between `fdc2bd6` and `7a7d2dd`; the
-model-card catalog and the existing two-model/two-risk fixture did not change
-bytes. The complete F1 trace also did not change:
+Between `fdc2bd6` and `d3fca0c`, the perspective schema and model-card catalog
+changed bytes while the existing two-model/two-risk fixture did not. The
+`referrers` traversal and evaluation set remain unchanged:
 
 ```text
 scope input       $['components'][0]
 referrer outputs  $['risks']['risks'][0]
 evaluation set    $['risks']['risks'][0]
-matched paths     $['risks']['risks'][0]
 retained input    none
 ```
 
+The final expression results differ by mapping. Ethical Considerations still
+selects `risk-a`; Fairness Assessments selects no node because its revised
+expression requires a `fairness` risk domain while the unchanged fixture
+declares only the `ethical` domain. The pinned #1067 risk schema does not yet
+admit `fairness` as a predefined risk domain; that value is present at the
+pinned #990 head. This is recorded as a cross-PR integration dependency, not
+as a defect in the revised expression.
+
 The before/after input hashes and node sets are recorded in
 [`results/f1-head-transition-comparison.json`](results/f1-head-transition-comparison.json).
+The risk-domain enum comparison, unchanged fixture declarations, traversal
+output, and final Fairness selection are recorded together in
+[`results/fairness-domain-integration-observation.json`](results/fairness-domain-integration-observation.json).
 
 Five additional semantic-only fixtures use revision- and SHA-256-pinned IBM
 and Hugging Face subjects to exercise the formulation-scope case. Expression
@@ -33,16 +43,18 @@ duplicate local identifiers, and an external BOM-Link that is recorded but not
 fetched. Subject identities are in
 [`source/ibm-hf-scope-subjects.json`](source/ibm-hf-scope-subjects.json).
 
-The probe deliberately does not turn `relevance: "required"` into a pass/fail
-decision. Two schema-valid cases demonstrate why a separate completeness rule
-is needed:
+The probe does not independently define `relevance: "required"`. Two
+schema-valid cases retain the previously compared policy outcomes:
 
 | case | mapping any-match | per-initial-subject presence | per-initial-subject non-empty |
 | --- | ---: | ---: | ---: |
 | two models in one scope; only model A has `licenses` | pass | fail | fail |
 | one model with `licenses: []` | pass | pass | fail |
 
-These are candidate policy outcomes, not normative answers. See
+At `d3fca0c`, the source prose resolves these direct-mapping cases as any-match
+per scope, with one scope per subject for a per-subject verdict, and leaves the
+sufficiency of a selected empty collection to consumer policy. The other
+columns remain observational comparisons, not conformance verdicts. See
 [`results/required-policy-comparison.json`](results/required-policy-comparison.json).
 
 ## Reproduce
@@ -86,7 +98,7 @@ results use repository-relative paths and do not contain workstation paths.
 ## Interpretation and claim boundary
 
 The interpretation profile is embedded in every evaluator result. At
-`7a7d2dd`, scoped `referrers` replace the current set with matching referring
+`d3fca0c`, scoped `referrers` replace the current set with matching referring
 objects and do not retain input objects. When the current set contains the
 document root, `referrers` is an identity operation, including for an explicit
 `$` scope and for successive identity steps. Holder resolution covers one
@@ -95,8 +107,9 @@ remains unsupported and is rejected explicitly.
 
 The safe claim is that the checked PR/repository path does not contain an
 executable semantic conformance test for these operations. This repository does
-not claim that no independent implementation exists elsewhere. It also does not
-choose a completeness policy.
+not claim that no independent implementation exists elsewhere. It reports the
+completeness interpretation stated by the pinned source without defining an
+additional conformance policy.
 
 ## Author
 
