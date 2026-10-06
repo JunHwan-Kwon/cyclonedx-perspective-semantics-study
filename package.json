@@ -7,6 +7,7 @@
     "node": ">=20"
   },
   "scripts": {
+    "check:catalog": "node snapshots/2026-10-06-catalog-integration/check.mjs",
     "capture": "node scripts/capture-pr1067-sources.mjs",
     "evaluate": "node scripts/run-fixtures.mjs",
     "compare": "node scripts/compare-required-policies.mjs && node scripts/compare-head-transition.mjs && node scripts/analyze-fairness-integration.mjs",

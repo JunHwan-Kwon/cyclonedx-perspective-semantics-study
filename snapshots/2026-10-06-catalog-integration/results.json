@@ -1,0 +1,497 @@
+{
+  "source_heads": {
+    "pr1067": "565b1d130b30d6f4d0be45b9090781e8958de804",
+    "pr990": "f3d852197b1e13860dd6dea9d1c22b6c56c286ef"
+  },
+  "status": "proposal-tested-not-upstream-accepted",
+  "policy": "Only implements is proposed for Intended Use; other relationships are preserved in the BOM and not inferred to be intended use.",
+  "validator": {
+    "name": "Ajv 2020",
+    "strict_lint": false,
+    "formats": true,
+    "ajv_version": "8.20.0",
+    "jsonpath_version": "1.3.0"
+  },
+  "catalog_schema_validation": {
+    "original": true,
+    "proposed": true,
+    "source": "pr1067"
+  },
+  "changed_lines": [
+    167,
+    175,
+    177,
+    180,
+    186,
+    238
+  ],
+  "official_fixtures": [
+    {
+      "file": "valid-ai-ml-model-2.0.json",
+      "schema_valid": true,
+      "before": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": []
+        },
+        "Use Case Definitions": {
+          "reference_paths": [],
+          "reference_values": [],
+          "target_paths": [],
+          "selected_paths": []
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      },
+      "proposed": {
+        "Quantitative Analysis": {
+          "selected_paths": [
+            "$['components'][0]['measurements'][0]",
+            "$['components'][0]['measurements'][1]",
+            "$['components'][0]['measurements'][2]"
+          ]
+        },
+        "Intended Use": {
+          "selected_paths": []
+        },
+        "Use Case Definitions": {
+          "reference_paths": [],
+          "reference_values": [],
+          "target_paths": [],
+          "selected_paths": []
+        },
+        "Environmental Considerations": {
+          "selected_paths": [
+            "$['components'][0]['measurements'][3]",
+            "$['components'][0]['measurements'][4]"
+          ]
+        }
+      }
+    },
+    {
+      "file": "valid-ai-ml-risk-integration-2.0.json",
+      "schema_valid": true,
+      "before": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": []
+        },
+        "Use Case Definitions": {
+          "reference_paths": [],
+          "reference_values": [],
+          "target_paths": [],
+          "selected_paths": []
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      },
+      "proposed": {
+        "Quantitative Analysis": {
+          "selected_paths": [
+            "$['components'][0]['measurements'][0]",
+            "$['components'][0]['measurements'][1]",
+            "$['components'][0]['measurements'][2]"
+          ]
+        },
+        "Intended Use": {
+          "selected_paths": [
+            "$['components'][0]['useCaseAssertions'][0]['useCaseRefs']"
+          ]
+        },
+        "Use Case Definitions": {
+          "reference_paths": [
+            "$['components'][0]['useCaseAssertions'][0]['useCaseRefs'][0]"
+          ],
+          "reference_values": [
+            "usecase-clinical-summarization"
+          ],
+          "target_paths": [
+            "$['definitions']['useCases'][0]"
+          ],
+          "selected_paths": [
+            "$['definitions']['useCases'][0]"
+          ]
+        },
+        "Environmental Considerations": {
+          "selected_paths": [
+            "$['components'][0]['measurements'][3]",
+            "$['components'][0]['measurements'][4]"
+          ]
+        }
+      }
+    }
+  ],
+  "additional_checks": [
+    {
+      "case": "assertion-extends",
+      "schema_valid": true,
+      "expected_selected_references": [],
+      "actual": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": []
+        },
+        "Use Case Definitions": {
+          "reference_paths": [],
+          "reference_values": [],
+          "target_paths": [],
+          "selected_paths": []
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      }
+    },
+    {
+      "case": "assertion-implements",
+      "schema_valid": true,
+      "expected_selected_references": [
+        "use-a"
+      ],
+      "actual": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": [
+            "$['components'][0]['useCaseAssertions'][0]['useCaseRefs']"
+          ]
+        },
+        "Use Case Definitions": {
+          "reference_paths": [
+            "$['components'][0]['useCaseAssertions'][0]['useCaseRefs'][0]"
+          ],
+          "reference_values": [
+            "use-a"
+          ],
+          "target_paths": [
+            "$['definitions']['useCases'][0]"
+          ],
+          "selected_paths": [
+            "$['definitions']['useCases'][0]"
+          ]
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      }
+    },
+    {
+      "case": "assertion-inhibits",
+      "schema_valid": true,
+      "expected_selected_references": [],
+      "actual": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": []
+        },
+        "Use Case Definitions": {
+          "reference_paths": [],
+          "reference_values": [],
+          "target_paths": [],
+          "selected_paths": []
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      }
+    },
+    {
+      "case": "assertion-not-applicable",
+      "schema_valid": true,
+      "expected_selected_references": [],
+      "actual": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": []
+        },
+        "Use Case Definitions": {
+          "reference_paths": [],
+          "reference_values": [],
+          "target_paths": [],
+          "selected_paths": []
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      }
+    },
+    {
+      "case": "assertion-not-assessed",
+      "schema_valid": true,
+      "expected_selected_references": [],
+      "actual": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": []
+        },
+        "Use Case Definitions": {
+          "reference_paths": [],
+          "reference_values": [],
+          "target_paths": [],
+          "selected_paths": []
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      }
+    },
+    {
+      "case": "assertion-other",
+      "schema_valid": true,
+      "expected_selected_references": [],
+      "actual": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": []
+        },
+        "Use Case Definitions": {
+          "reference_paths": [],
+          "reference_values": [],
+          "target_paths": [],
+          "selected_paths": []
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      }
+    },
+    {
+      "case": "assertion-participates-in",
+      "schema_valid": true,
+      "expected_selected_references": [],
+      "actual": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": []
+        },
+        "Use Case Definitions": {
+          "reference_paths": [],
+          "reference_values": [],
+          "target_paths": [],
+          "selected_paths": []
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      }
+    },
+    {
+      "case": "assertion-supports",
+      "schema_valid": true,
+      "expected_selected_references": [],
+      "actual": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": []
+        },
+        "Use Case Definitions": {
+          "reference_paths": [],
+          "reference_values": [],
+          "target_paths": [],
+          "selected_paths": []
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      }
+    },
+    {
+      "case": "assertion-triggers",
+      "schema_valid": true,
+      "expected_selected_references": [],
+      "actual": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": []
+        },
+        "Use Case Definitions": {
+          "reference_paths": [],
+          "reference_values": [],
+          "target_paths": [],
+          "selected_paths": []
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      }
+    },
+    {
+      "case": "assertion-validates",
+      "schema_valid": true,
+      "expected_selected_references": [],
+      "actual": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": []
+        },
+        "Use Case Definitions": {
+          "reference_paths": [],
+          "reference_values": [],
+          "target_paths": [],
+          "selected_paths": []
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      }
+    },
+    {
+      "case": "source-subtree-$['components'][0]",
+      "schema_valid": true,
+      "expected_selected_references": [
+        "use-a"
+      ],
+      "actual": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": [
+            "$['components'][0]['useCaseAssertions'][0]['useCaseRefs']"
+          ]
+        },
+        "Use Case Definitions": {
+          "reference_paths": [
+            "$['components'][0]['useCaseAssertions'][0]['useCaseRefs'][0]"
+          ],
+          "reference_values": [
+            "use-a"
+          ],
+          "target_paths": [
+            "$['definitions']['useCases'][0]"
+          ],
+          "selected_paths": [
+            "$['definitions']['useCases'][0]"
+          ]
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      }
+    },
+    {
+      "case": "source-subtree-$['components'][1]",
+      "schema_valid": true,
+      "expected_selected_references": [
+        "use-b"
+      ],
+      "actual": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": [
+            "$['components'][1]['useCaseAssertions'][0]['useCaseRefs']"
+          ]
+        },
+        "Use Case Definitions": {
+          "reference_paths": [
+            "$['components'][1]['useCaseAssertions'][0]['useCaseRefs'][0]"
+          ],
+          "reference_values": [
+            "use-b"
+          ],
+          "target_paths": [
+            "$['definitions']['useCases'][2]"
+          ],
+          "selected_paths": [
+            "$['definitions']['useCases'][2]"
+          ]
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      }
+    },
+    {
+      "case": "source-subtree-$",
+      "schema_valid": true,
+      "expected_selected_references": [
+        "use-a",
+        "use-b"
+      ],
+      "actual": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": [
+            "$['components'][0]['useCaseAssertions'][0]['useCaseRefs']",
+            "$['components'][1]['useCaseAssertions'][0]['useCaseRefs']"
+          ]
+        },
+        "Use Case Definitions": {
+          "reference_paths": [
+            "$['components'][0]['useCaseAssertions'][0]['useCaseRefs'][0]",
+            "$['components'][1]['useCaseAssertions'][0]['useCaseRefs'][0]"
+          ],
+          "reference_values": [
+            "use-a",
+            "use-b"
+          ],
+          "target_paths": [
+            "$['definitions']['useCases'][0]",
+            "$['definitions']['useCases'][2]"
+          ],
+          "selected_paths": [
+            "$['definitions']['useCases'][0]",
+            "$['definitions']['useCases'][2]"
+          ]
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      }
+    },
+    {
+      "case": "empty-reference-array",
+      "schema_valid": true,
+      "meaning": "One selected collection, no resolved definition; no new non-empty completeness policy.",
+      "actual": {
+        "Quantitative Analysis": {
+          "selected_paths": []
+        },
+        "Intended Use": {
+          "selected_paths": [
+            "$['components'][0]['useCaseAssertions'][0]['useCaseRefs']"
+          ]
+        },
+        "Use Case Definitions": {
+          "reference_paths": [],
+          "reference_values": [],
+          "target_paths": [],
+          "selected_paths": []
+        },
+        "Environmental Considerations": {
+          "selected_paths": []
+        }
+      }
+    }
+  ],
+  "boundary": "Four catalog mappings only. Reference tests use unique local IDs and explicit source-subtree restrictions. Not a full perspective scope/closure/referrers/dependency conformance test. No Required or empty-value policy is defined."
+}

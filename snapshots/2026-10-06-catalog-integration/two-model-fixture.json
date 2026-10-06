@@ -1,0 +1,56 @@
+{
+  "specFormat": "CycloneDX",
+  "specVersion": "2.0",
+  "components": [
+    {
+      "type": "machine-learning-model",
+      "bom-ref": "model-a",
+      "name": "Model A",
+      "modelProperties": {},
+      "useCaseAssertions": [
+        {
+          "assertionType": "implements",
+          "useCaseRefs": [
+            "use-a"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "machine-learning-model",
+      "bom-ref": "model-b",
+      "name": "Model B",
+      "modelProperties": {},
+      "useCaseAssertions": [
+        {
+          "assertionType": "implements",
+          "useCaseRefs": [
+            "use-b"
+          ]
+        },
+        {
+          "assertionType": "not-applicable",
+          "useCaseRefs": [
+            "use-a"
+          ]
+        }
+      ]
+    }
+  ],
+  "definitions": {
+    "useCases": [
+      {
+        "bom-ref": "use-a",
+        "name": "Use A"
+      },
+      {
+        "bom-ref": "unrelated",
+        "name": "Unrelated use"
+      },
+      {
+        "bom-ref": "use-b",
+        "name": "Use B"
+      }
+    ]
+  }
+}

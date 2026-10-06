@@ -1,0 +1,29 @@
+[
+  {
+    "id": "performance-measurements",
+    "start": 167,
+    "end": 167,
+    "path": "perspectives/model-card-perspective.json",
+    "side": "RIGHT",
+    "original": "          \"expression\": \"$..[?(@.type=='machine-learning-model')].modelProperties.evaluation\",",
+    "replacement": "          \"expression\": \"$..[?(@.type=='machine-learning-model')].measurements[?(@.type)]\","
+  },
+  {
+    "id": "implemented-use-cases",
+    "start": 175,
+    "end": 186,
+    "path": "perspectives/model-card-perspective.json",
+    "side": "RIGHT",
+    "original": "          \"expression\": \"$..[?(@.type=='machine-learning-model')].modelProperties.useCases\",\n          \"nativeName\": \"Intended Use\",\n          \"nativeDescription\": \"References to the use cases the model is intended for.\",\n          \"relevance\": \"required\",\n          \"weight\": 0.9,\n          \"rationale\": \"Intended use separates in-scope application from misuse; it is the card section most consulted by adopters and assessors.\"\n        },\n        {\n          \"expression\": \"$.definitions.useCases[*]\",\n          \"via\": [\n            {\n              \"refs\": \"$..[?(@.type=='machine-learning-model')].modelProperties.useCases[*]\"",
+    "replacement": "          \"expression\": \"$..[?(@.type=='machine-learning-model')].useCaseAssertions[?(@.assertionType=='implements')].useCaseRefs\",\n          \"nativeName\": \"Intended Use\",\n          \"nativeDescription\": \"References to use cases the model explicitly asserts that it implements.\",\n          \"relevance\": \"required\",\n          \"weight\": 0.9,\n          \"rationale\": \"This mapping selects only implements assertions, whose relationship identifies the model as providing the use case's primary capability. Other assertion types retain their distinct meanings in the BOM and are not inferred to declare intended use by this mapping.\"\n        },\n        {\n          \"expression\": \"$.definitions.useCases[*]\",\n          \"via\": [\n            {\n              \"refs\": \"$..[?(@.type=='machine-learning-model')].useCaseAssertions[?(@.assertionType=='implements')].useCaseRefs[*]\""
+  },
+  {
+    "id": "energy-measurements",
+    "start": 238,
+    "end": 238,
+    "path": "perspectives/model-card-perspective.json",
+    "side": "RIGHT",
+    "original": "          \"expression\": \"$..[?(@.type=='machine-learning-model')].modelProperties.environmental\",",
+    "replacement": "          \"expression\": \"$..[?(@.type=='machine-learning-model')].measurements[?(@.activity)]\","
+  }
+]

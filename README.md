@@ -4,7 +4,16 @@ This repository contains a bounded, separately developed, non-normative semantic
 scope and traversal prose in CycloneDX specification PR #1067. It is evidence
 for review, not a CycloneDX reference implementation or a product exporter.
 
-The current evidence is pinned to commit
+## October 6 catalog integration proposal
+
+A separate [bounded snapshot](snapshots/2026-10-06-catalog-integration/README.md)
+compares four model-card mappings at #1067 `565b1d1` with the official #990
+`f3d8521` fixtures. It includes a tested patch and three applicable line
+suggestions, with an explicit implements-only intended-use policy proposed for
+maintainer acceptance or rejection. Run `npm run check:catalog` to reproduce.
+The proposal does not reopen the previously resolved scope/completeness work.
+
+The original scope and traversal evidence below is pinned to commit
 `d3fca0c0c4750008e2bc250b47f5692caa416d73`.
 
 ## Result at the pinned head

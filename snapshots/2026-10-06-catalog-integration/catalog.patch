@@ -1,0 +1,45 @@
+diff --git a/perspectives/model-card-perspective.json b/perspectives/model-card-perspective.json
+index 0b56269..577d4fc 100644
+--- a/perspectives/model-card-perspective.json
++++ b/perspectives/model-card-perspective.json
+@@ -164,7 +164,7 @@
+           "rationale": "Governance names who is accountable for the data, which regulators and downstream users need to trace provenance and responsibility."
+         },
+         {
+-          "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.evaluation",
++          "expression": "$..[?(@.type=='machine-learning-model')].measurements[?(@.type)]",
+           "nativeName": "Quantitative Analysis",
+           "nativeDescription": "Evaluation results: performance metrics, per-slice measurements, confidence intervals, and supporting graphics.",
+           "relevance": "recommended",
+@@ -172,18 +172,18 @@
+           "rationale": "Metrics, including slice-level results, substantiate capability claims and surface performance disparities between groups."
+         },
+         {
+-          "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.useCases",
++          "expression": "$..[?(@.type=='machine-learning-model')].useCaseAssertions[?(@.assertionType=='implements')].useCaseRefs",
+           "nativeName": "Intended Use",
+-          "nativeDescription": "References to the use cases the model is intended for.",
++          "nativeDescription": "References to use cases the model explicitly asserts that it implements.",
+           "relevance": "required",
+           "weight": 0.9,
+-          "rationale": "Intended use separates in-scope application from misuse; it is the card section most consulted by adopters and assessors."
++          "rationale": "This mapping selects only implements assertions, whose relationship identifies the model as providing the use case's primary capability. Other assertion types retain their distinct meanings in the BOM and are not inferred to declare intended use by this mapping."
+         },
+         {
+           "expression": "$.definitions.useCases[*]",
+           "via": [
+             {
+-              "refs": "$..[?(@.type=='machine-learning-model')].modelProperties.useCases[*]"
++              "refs": "$..[?(@.type=='machine-learning-model')].useCaseAssertions[?(@.assertionType=='implements')].useCaseRefs[*]"
+             }
+           ],
+           "nativeName": "Use Case Definitions",
+@@ -235,7 +235,7 @@
+           "rationale": "Fairness assessments identify demographic or group-level performance disparities; slice-level evaluation metrics provide their quantitative backing. Fairness is selected as a risk domain, mirroring ethical considerations, so the mapping does not depend on how a methodology categorizes impact. Bias is a weakness kind rather than an impact category, reachable from a risk through `relatedWeaknesses`; selecting those weaknesses needs its own mapping, because a traversal step replaces the set of nodes the expression is evaluated against. Risks reference the models they affect through `affects`, so the referrers step selects, for a scoped model, exactly the risks that name it; unscoped, every matching risk is selected."
+         },
+         {
+-          "expression": "$..[?(@.type=='machine-learning-model')].modelProperties.environmental",
++          "expression": "$..[?(@.type=='machine-learning-model')].measurements[?(@.activity)]",
+           "nativeName": "Environmental Considerations",
+           "nativeDescription": "Energy consumption and carbon cost of model activities such as training and inference.",
+           "relevance": "recommended",

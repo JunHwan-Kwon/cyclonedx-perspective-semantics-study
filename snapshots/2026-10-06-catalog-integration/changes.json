@@ -1,0 +1,23 @@
+{
+  "status": "proposed, not an accepted CycloneDX rule",
+  "mappings": {
+    "Quantitative Analysis": {
+      "expression": "$..[?(@.type=='machine-learning-model')].measurements[?(@.type)]"
+    },
+    "Intended Use": {
+      "expression": "$..[?(@.type=='machine-learning-model')].useCaseAssertions[?(@.assertionType=='implements')].useCaseRefs",
+      "nativeDescription": "References to use cases the model explicitly asserts that it implements.",
+      "rationale": "This mapping selects only implements assertions, whose relationship identifies the model as providing the use case's primary capability. Other assertion types retain their distinct meanings in the BOM and are not inferred to declare intended use by this mapping."
+    },
+    "Use Case Definitions": {
+      "via": [
+        {
+          "refs": "$..[?(@.type=='machine-learning-model')].useCaseAssertions[?(@.assertionType=='implements')].useCaseRefs[*]"
+        }
+      ]
+    },
+    "Environmental Considerations": {
+      "expression": "$..[?(@.type=='machine-learning-model')].measurements[?(@.activity)]"
+    }
+  }
+}

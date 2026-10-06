@@ -1,0 +1,547 @@
+{
+  "immutable_inputs": true,
+  "sources": [
+    {
+      "id": "pr1067",
+      "repository": "relizaio/cyclonedx-specification",
+      "commit": "565b1d130b30d6f4d0be45b9090781e8958de804",
+      "files": [
+        {
+          "path": "perspectives/model-card-perspective.json",
+          "bytes": 14864,
+          "sha256": "3fed393fde4167ddb203792530613f3fd804fcecb0b19d4d10be8a3910333b43",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/perspectives/model-card-perspective.json"
+        },
+        {
+          "path": "schema/2.0/cyclonedx-2.0-bundled.min.schema.json",
+          "bytes": 565613,
+          "sha256": "a042487c24e67ee4c92713d5aa28aa1e8d3d1a25d2f26d29530c9db0db33f8ad",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/cyclonedx-2.0-bundled.min.schema.json"
+        },
+        {
+          "path": "schema/2.0/cyclonedx-2.0-bundled.schema.json",
+          "bytes": 857812,
+          "sha256": "27dee3aac6618d85a3e000e3ceca399d3f0d5e05f1c31d28774a9959a9d15599",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/cyclonedx-2.0-bundled.schema.json"
+        },
+        {
+          "path": "schema/2.0/cyclonedx-2.0.schema.json",
+          "bytes": 4568,
+          "sha256": "bb223dcfea7e47021bd3d5cfee70fd04daae9e071081c916c57140c9a999bb6c",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/cyclonedx-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/cyclonedx-api-2.0.schema.json",
+          "bytes": 572,
+          "sha256": "9bb8a3fabccbba271be1661d3ab8c7b1652f9744620b2b0bbfad271a6583d2fb",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/cyclonedx-api-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-ai-modelcard-2.0.schema.json",
+          "bytes": 23666,
+          "sha256": "29e69de765f8a91dbf3dce9b7c206b1077855e90c760e6b304bae03678e5d1e8",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-ai-modelcard-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-annotation-2.0.schema.json",
+          "bytes": 4233,
+          "sha256": "1e42f32a0b635d6ebfa898c1d756cc4a00e6380b0002fa54965ac70333d6fca4",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-annotation-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-behavior-2.0.schema.json",
+          "bytes": 16261,
+          "sha256": "652b7a902b29b85b15e4238007cbff67e35466c0c12c208e07d883243ffe76c7",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-behavior-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-blueprint-2.0.schema.json",
+          "bytes": 83839,
+          "sha256": "1577136df12fe09685bc56f2b912cd9cd44b829a65ab931582168633c4608cfd",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-blueprint-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-business-objective-2.0.schema.json",
+          "bytes": 2562,
+          "sha256": "68b57973d02cf95a792bec87e679dd67d1cdfa4a723cfaddf5dd9d32212afe13",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-business-objective-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-certification-2.0.schema.json",
+          "bytes": 4950,
+          "sha256": "825b4e91eceb668cd570e80c0cb1a4a8bd2f5037e07c771a04d4d184459a0aac",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-certification-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-citation-2.0.schema.json",
+          "bytes": 4369,
+          "sha256": "2ddaa1cca7c01151f7daa4d0534e88da9d307bf47a48122350aa2ac1cbed782d",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-citation-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-common-2.0.schema.json",
+          "bytes": 48509,
+          "sha256": "007e64f84023acbca75c86769a4060ca1663df402a3ef15b3f3d7e69b2768e21",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-common-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-component-2.0.schema.json",
+          "bytes": 50020,
+          "sha256": "50c112353fa10e458446be05e944cc36bd682f12e3304b6c742f77e672230dbd",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-component-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-composition-2.0.schema.json",
+          "bytes": 5568,
+          "sha256": "ed62a453373372a554261c128ccd52aa305ce65a90f66a49abf369deafb8a32e",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-composition-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-control-2.0.schema.json",
+          "bytes": 8879,
+          "sha256": "7397052d6dd5cf9ffe36ca7cf0f7fb00d11b7e0f181dadca2516d9de8d768ebc",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-control-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-cryptography-2.0.schema.json",
+          "bytes": 57086,
+          "sha256": "293356aa86e76c904c2f093348a3639e15abe08fbb6c475ddeda5b972d172c10",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-cryptography-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-data-2.0.schema.json",
+          "bytes": 38667,
+          "sha256": "13eb27d02041e53e36a2e170ba8c509e03502804f91b0d9f078c7fba7088deca",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-data-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-declaration-2.0.schema.json",
+          "bytes": 17433,
+          "sha256": "b6fd8353f1702412215b7d453b15cdef3b6088c8dbc872d0d2e7073a3fecaf34",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-declaration-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-definition-2.0.schema.json",
+          "bytes": 1377,
+          "sha256": "e842d54f7d6d764231c35476e66277d8339f68eaf8ebcec80bb3eb27d9b12de3",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-definition-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-dependency-2.0.schema.json",
+          "bytes": 2708,
+          "sha256": "9bcc5a53cf661bd6483e0dcecd0921c19a99dcc6fce9cad32862592a81ddf1d3",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-dependency-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-evidence-2.0.schema.json",
+          "bytes": 29063,
+          "sha256": "2498c1f2fb1f6d343cacc6be0c36f589e5fb715aa99b730a6b242874132331ef",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-evidence-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-formulation-2.0.schema.json",
+          "bytes": 35134,
+          "sha256": "596a8888c5a494ba40349a0382d98f40e1326e3b88eb84aae3a770f9321c7eba",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-formulation-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-jss_X590_2023_10-2.0.schema.json",
+          "bytes": 19074,
+          "sha256": "426608b4d23db80d0de041d4a7111ce106dafe64b4ade2907cc446d4841f761f",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-jss_X590_2023_10-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-license-2.0.schema.json",
+          "bytes": 16751,
+          "sha256": "4fc5012b81093e991fc491d8eb0b4acea62fa77fd605b0527472160020514752",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-license-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-metadata-2.0.schema.json",
+          "bytes": 5291,
+          "sha256": "4e3dde1d7beb3b1a555298c077398cac6eff5b2111af73801e56842c07f51890",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-metadata-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-party-2.0.schema.json",
+          "bytes": 47723,
+          "sha256": "febd71973c1c9b7a1a29281bf31c75ccf8b96f222b90090f78dd0a4b7c301200",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-party-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-patent-2.0.schema.json",
+          "bytes": 16373,
+          "sha256": "c3b6466b6dc8ed9f0c7b61e54b9a9ee7eb3bc5c29f3cac40acf76bf3c0b58094",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-patent-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-perspective-2.0.schema.json",
+          "bytes": 35942,
+          "sha256": "ffa705bafbfd4e76a4b916898630bcf9db062f414a3fb27007c5a30e3cb124e1",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-perspective-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-physical-2.0.schema.json",
+          "bytes": 11907,
+          "sha256": "8e404b3c7cb559aecb4e031904cfebab53ab162ddfdebedee0d3ec255d69f532",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-physical-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-profile-2.0.schema.json",
+          "bytes": 1341,
+          "sha256": "4f7cd3ee30cd85a7085f7dccbd761dc0a7565ee7b2128875d2d9985b11d827ac",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-profile-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-release-notes-2.0.schema.json",
+          "bytes": 5621,
+          "sha256": "1722391d4b0f57c37e01dcfb439368df07802443604a56bbd1721b2f994571de",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-release-notes-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-requirement-2.0.schema.json",
+          "bytes": 14097,
+          "sha256": "6c09a886b8ee0acc7b0f959504b8d02222de664dd4b1d220c8b56e30b17eac8d",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-requirement-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-risk-2.0.schema.json",
+          "bytes": 66773,
+          "sha256": "229a0442bfc63e5c8bc7779cb765c901d8da3192012512404a40968047a9aba7",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-risk-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-standard-2.0.schema.json",
+          "bytes": 6925,
+          "sha256": "688079c7c22085fe2639299c18c56318e36d6a8c0944489cc4b1402b32019967",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-standard-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-threat-2.0.schema.json",
+          "bytes": 58072,
+          "sha256": "6dc4eb5ee226defc75c4b7a4a94bcfd8c52e094d9f566229c8e3fc33407aa4d3",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-threat-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-usecase-2.0.schema.json",
+          "bytes": 13471,
+          "sha256": "f547c090e66961993981b3937749e448e26adf6cb23829c857cc144cc584ea4b",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-usecase-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-vulnerability-2.0.schema.json",
+          "bytes": 35112,
+          "sha256": "8b48c2d6d62dcd136f1cf9b4e4de455df32e5b3cb09cc6a37fbb5d43cfde50e9",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-vulnerability-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-weakness-2.0.schema.json",
+          "bytes": 2982,
+          "sha256": "6ac578c30e22b5a8689fedb50327b79b92a47f9038dfcf359b164d584d2dc08d",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/2.0/model/cyclonedx-weakness-2.0.schema.json"
+        },
+        {
+          "path": "schema/behavior-taxonomy.schema.json",
+          "bytes": 99879,
+          "sha256": "d29fd07ab6612b958121fa2baf9b6c0744a1ceec8682d820e8f8372c11e7fd3e",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/behavior-taxonomy.schema.json"
+        },
+        {
+          "path": "schema/cryptography-defs.schema.json",
+          "bytes": 27776,
+          "sha256": "6feb513095bf9e5861f5e8afb0eaeb8c06974bff420cbb6908735c44256e6d44",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/cryptography-defs.schema.json"
+        },
+        {
+          "path": "schema/jsf-0.82.schema.json",
+          "bytes": 8073,
+          "sha256": "3709a78ac30593459b346b80cef89be20238892f30950db472003e0ecc84b46b",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/jsf-0.82.schema.json"
+        },
+        {
+          "path": "schema/perspectives-defs.schema.json",
+          "bytes": 5955,
+          "sha256": "da80fb6e16f923a858d1eba17d36e9a2b6af9cc24fbf98d5bcbcf8d1e1245bdd",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/perspectives-defs.schema.json"
+        },
+        {
+          "path": "schema/spdx.schema.json",
+          "bytes": 63398,
+          "sha256": "bfe14d09b3fb62a8ced8bcfc357d32dad19042067e9862a02f48e95966df19ed",
+          "url": "https://raw.githubusercontent.com/relizaio/cyclonedx-specification/565b1d130b30d6f4d0be45b9090781e8958de804/schema/spdx.schema.json"
+        }
+      ]
+    },
+    {
+      "id": "pr990",
+      "repository": "CycloneDX/specification",
+      "commit": "f3d852197b1e13860dd6dea9d1c22b6c56c286ef",
+      "files": [
+        {
+          "path": "schema/2.0/cyclonedx-2.0-bundled.min.schema.json",
+          "bytes": 567629,
+          "sha256": "94e97760135bf8369f3825966064d9b7face803558096022f9301ddb2339c0ac",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/cyclonedx-2.0-bundled.min.schema.json"
+        },
+        {
+          "path": "schema/2.0/cyclonedx-2.0-bundled.schema.json",
+          "bytes": 859061,
+          "sha256": "64aae1058e15b362e8e5593a3b3cbb14d72c71bab789ef7351e26039751f48d2",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/cyclonedx-2.0-bundled.schema.json"
+        },
+        {
+          "path": "schema/2.0/cyclonedx-2.0.schema.json",
+          "bytes": 4591,
+          "sha256": "cb299dd805d9b2afbc88489ab70b9e33c67021c474f104da8ba8bf5553a292b2",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/cyclonedx-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/cyclonedx-api-2.0.schema.json",
+          "bytes": 572,
+          "sha256": "9bb8a3fabccbba271be1661d3ab8c7b1652f9744620b2b0bbfad271a6583d2fb",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/cyclonedx-api-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-ai-ml-2.0.schema.json",
+          "bytes": 44547,
+          "sha256": "78632e5c4768575661799ac9e3220b2c816ab285aa09a95a622a34173865f08d",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-ai-ml-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-annotation-2.0.schema.json",
+          "bytes": 4254,
+          "sha256": "f04eed36917f9fa88d8ab4b44b27483c9ad50dcbb0cb1762d99c9f3e19a3d63b",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-annotation-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-behavior-2.0.schema.json",
+          "bytes": 16234,
+          "sha256": "44267936afcb69d4347c82ac2770279065eda61942902606fc6968670adff98b",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-behavior-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-blueprint-2.0.schema.json",
+          "bytes": 83871,
+          "sha256": "47846ca4409f10fedb846eb921f9e677b7f8868588c2ec384cf092650e0f3d68",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-blueprint-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-business-objective-2.0.schema.json",
+          "bytes": 2562,
+          "sha256": "68b57973d02cf95a792bec87e679dd67d1cdfa4a723cfaddf5dd9d32212afe13",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-business-objective-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-certification-2.0.schema.json",
+          "bytes": 4950,
+          "sha256": "825b4e91eceb668cd570e80c0cb1a4a8bd2f5037e07c771a04d4d184459a0aac",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-certification-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-citation-2.0.schema.json",
+          "bytes": 4107,
+          "sha256": "7a3d6c0d6793b785c68efd896e52f0df51ce081dc0335c36db7432287968befe",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-citation-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-common-2.0.schema.json",
+          "bytes": 58800,
+          "sha256": "70e5b35870efa6b28b87675147a34727f17275e9f3ecf97f48024c06c162ac39",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-common-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-component-2.0.schema.json",
+          "bytes": 61690,
+          "sha256": "8c95e0f7c739911f7d78dd20400af9e0af5c3237cc1d92d7e10955d0a983b3da",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-component-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-composition-2.0.schema.json",
+          "bytes": 5860,
+          "sha256": "b0bad1b922fa1ddfef0b94fc5394a9e6fb0c1af432bfdb00258c7db528c65abe",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-composition-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-control-2.0.schema.json",
+          "bytes": 8967,
+          "sha256": "e025850f5ad94f25fd65225472e64abf68e132875e1e5ba1beb9e07ffab939fd",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-control-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-cryptography-2.0.schema.json",
+          "bytes": 57867,
+          "sha256": "e260e80b74df15a5c9d9a4817cee0527f439fe70f1bbe6af6c8307d73b300e00",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-cryptography-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-data-2.0.schema.json",
+          "bytes": 38773,
+          "sha256": "56bb4f55a3ea7960dea239a27b87a9f549eb5b2c50bbefc28f567a448a8be1d3",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-data-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-declaration-2.0.schema.json",
+          "bytes": 17285,
+          "sha256": "9af649e231478cd3b4034535dc39a4bd16c521a5b0847ed86ad9158991819201",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-declaration-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-definition-2.0.schema.json",
+          "bytes": 1895,
+          "sha256": "3e8810da19dfecb9007033ab5cad9f987412f8e9c91664f4ebc9fcdf5b1ff5ab",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-definition-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-dependency-2.0.schema.json",
+          "bytes": 2708,
+          "sha256": "9bcc5a53cf661bd6483e0dcecd0921c19a99dcc6fce9cad32862592a81ddf1d3",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-dependency-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-evidence-2.0.schema.json",
+          "bytes": 28925,
+          "sha256": "5ff4744e94554c95948817252b3b84215248bfcd5b177eaf7398924b208e67c8",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-evidence-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-formulation-2.0.schema.json",
+          "bytes": 35308,
+          "sha256": "a155fc1a9de33de0361913029c50ebeca155de41ec3aa74110c500a9de7c940f",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-formulation-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-jss_X590_2023_10-2.0.schema.json",
+          "bytes": 18409,
+          "sha256": "654ce1007e7ffea19c965428dd62a9234a5704a018439739b644719036bfcc0b",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-jss_X590_2023_10-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-license-2.0.schema.json",
+          "bytes": 16405,
+          "sha256": "eaeb94e9debf1b6e4a4690bf522965ec92fd8ccb2608022e2eb6035f86c6eba6",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-license-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-metadata-2.0.schema.json",
+          "bytes": 5279,
+          "sha256": "b85047766a08751494bd34ce3706f6fae2f513f16484af302918ba868a9c8886",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-metadata-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-party-2.0.schema.json",
+          "bytes": 47620,
+          "sha256": "f8034cd519350e44e00f45ff1ed816307a3449b97e3a69de7226068864a7e1d5",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-party-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-patent-2.0.schema.json",
+          "bytes": 16426,
+          "sha256": "c140c346db1e6f13581dccd0eacc58dfd18a2165143a07bf1555981fafaecf49",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-patent-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-perspective-2.0.schema.json",
+          "bytes": 22753,
+          "sha256": "ab10157d276ce084dc3237a5ba4b8bcdfcac0922c77415d6f4ea080c98ad8e07",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-perspective-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-physical-2.0.schema.json",
+          "bytes": 11919,
+          "sha256": "fd8bc03f5d4a75358d8093f5310ee2a5a3728140d28df96c3dd46590ad75b6c5",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-physical-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-profile-2.0.schema.json",
+          "bytes": 1341,
+          "sha256": "4f7cd3ee30cd85a7085f7dccbd761dc0a7565ee7b2128875d2d9985b11d827ac",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-profile-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-release-notes-2.0.schema.json",
+          "bytes": 5620,
+          "sha256": "5fbe8cdbb28ef73927506abb714cc47f374b0e43ea0f71584e49f6b2318901a8",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-release-notes-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-requirement-2.0.schema.json",
+          "bytes": 14287,
+          "sha256": "d44fbd35444c8ed90d39ebf82dc075f4538583712845dc8ba68c2e94213a1cec",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-requirement-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-risk-2.0.schema.json",
+          "bytes": 68081,
+          "sha256": "2b6311df4e5b521c99c488edf9f2b78528358c827355e309f9d203027dd9b1dd",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-risk-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-standard-2.0.schema.json",
+          "bytes": 6924,
+          "sha256": "b9ba948b135a1ed77b38b9824476c6552a64b171fea0a93b077a676888833484",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-standard-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-threat-2.0.schema.json",
+          "bytes": 58722,
+          "sha256": "1c7998a68a64d0a59ba6204fb53616e41a48b74691b8b2ef17279ef3d29e8944",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-threat-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-usecase-2.0.schema.json",
+          "bytes": 13501,
+          "sha256": "2d968d0b5f02a52f97d06f29c0983c09c577dd52adc38064ec3d8b43696ae372",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-usecase-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-vulnerability-2.0.schema.json",
+          "bytes": 35266,
+          "sha256": "1640231d8ff5acc1a47c1aefe3557a434d349e717dcc4528217c9d6af78fb6c5",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-vulnerability-2.0.schema.json"
+        },
+        {
+          "path": "schema/2.0/model/cyclonedx-weakness-2.0.schema.json",
+          "bytes": 13384,
+          "sha256": "663feb583f555e8a29c7d60e8db95cff3e737ceaaa2d9a4dd2e92556f7b3ab5f",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/2.0/model/cyclonedx-weakness-2.0.schema.json"
+        },
+        {
+          "path": "schema/behavior-taxonomy.schema.json",
+          "bytes": 99899,
+          "sha256": "6e62e4ffd34399a517b28bfea2ae897f7b04ef89215957af0800f30d4156058f",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/behavior-taxonomy.schema.json"
+        },
+        {
+          "path": "schema/cryptography-defs.schema.json",
+          "bytes": 17140,
+          "sha256": "027b059a729a06d591bac79a584ef04f83fc32d91a826fdba6ad3c98a10e5b44",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/cryptography-defs.schema.json"
+        },
+        {
+          "path": "schema/jsf-0.82.schema.json",
+          "bytes": 8058,
+          "sha256": "8bae002c25e723db7ee1f26afde680ae1a2b1a8f6b4b4b0fd65dc3becb090aae",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/jsf-0.82.schema.json"
+        },
+        {
+          "path": "schema/spdx.schema.json",
+          "bytes": 62077,
+          "sha256": "ea6e844ee6fba1e93473d94834d0ee0996970533497935f932f73d488ffdf4a3",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/schema/spdx.schema.json"
+        },
+        {
+          "path": "tools/src/test/resources/2.0/valid-ai-ml-model-2.0.json",
+          "bytes": 12447,
+          "sha256": "19e54c6c47e3b513adbc079273a221b192a43ffcb94738b3ba7f50288f803fc1",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/tools/src/test/resources/2.0/valid-ai-ml-model-2.0.json"
+        },
+        {
+          "path": "tools/src/test/resources/2.0/valid-ai-ml-risk-integration-2.0.json",
+          "bytes": 17579,
+          "sha256": "244529b20b3be2b0d30217d7d46ce31095998fd58f5a1a4225e953a0b2c5f748",
+          "url": "https://raw.githubusercontent.com/CycloneDX/specification/f3d852197b1e13860dd6dea9d1c22b6c56c286ef/tools/src/test/resources/2.0/valid-ai-ml-risk-integration-2.0.json"
+        }
+      ]
+    }
+  ]
+}

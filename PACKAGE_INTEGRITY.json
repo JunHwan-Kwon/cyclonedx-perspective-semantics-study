@@ -24,8 +24,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5533,
-      "sha256": "2f8ad0da7b89886d1096e3f93519ded2c381f648ca70507e71f00222e1e4479d"
+      "bytes": 6070,
+      "sha256": "8c8962c003797abb197b4dba2b2a805e1a729e43ea870a146848879429af35af"
     },
     {
       "path": "REVIEW_EVIDENCE.md",
@@ -99,8 +99,8 @@
     },
     {
       "path": "package.json",
-      "bytes": 964,
-      "sha256": "0ca4ce8e39c8cf3f39daa3612358286af2c0d30ee6228d3f54129d9516cc951e"
+      "bytes": 1044,
+      "sha256": "73b7a95573c2cf2e5f65faa105423a801468acc17411736704018052d76880ef"
     },
     {
       "path": "results/f1-dataset-refs.result.json",
@@ -241,6 +241,46 @@
       "path": "scripts/verify-integrity.mjs",
       "bytes": 1211,
       "sha256": "1aeb8ae3454b4861f91f214f4742dc0ac70be1286a4cf62917e4ea2824fcfe81"
+    },
+    {
+      "path": "snapshots/2026-10-06-catalog-integration/README.md",
+      "bytes": 5804,
+      "sha256": "5bfafe3b1a74211a1664a42ca66502667edb5f5ed7e27edecfe761b9a382bbab"
+    },
+    {
+      "path": "snapshots/2026-10-06-catalog-integration/catalog.patch",
+      "bytes": 3630,
+      "sha256": "d91f5e634856b5e6d4b773e991a33701a93716b33350d22f5723ed9e5070b144"
+    },
+    {
+      "path": "snapshots/2026-10-06-catalog-integration/changes.json",
+      "bytes": 1092,
+      "sha256": "3af9db1c682560af7de40368a8cc8da6009833dcaaeebbad2f7f1716ad0a9723"
+    },
+    {
+      "path": "snapshots/2026-10-06-catalog-integration/check.mjs",
+      "bytes": 11341,
+      "sha256": "f2718a89b0fef1e1e0df7ce85d63bdcb62b7525f2623bc75f2614ea924c558a2"
+    },
+    {
+      "path": "snapshots/2026-10-06-catalog-integration/line-suggestions.json",
+      "bytes": 2567,
+      "sha256": "2ae0efbdab0c379a34b14ed35481a6f66ebe0a62cdc39246c05b62635f409169"
+    },
+    {
+      "path": "snapshots/2026-10-06-catalog-integration/results.json",
+      "bytes": 13252,
+      "sha256": "65d1616d388372a6b45d62f741540336d73cc5f8ce9741aebb882c96afb183f0"
+    },
+    {
+      "path": "snapshots/2026-10-06-catalog-integration/sources.json",
+      "bytes": 33692,
+      "sha256": "68db11af450a2e227fc7e6de0e9153a2db6c48ac60fce137df90e588ee8de79a"
+    },
+    {
+      "path": "snapshots/2026-10-06-catalog-integration/two-model-fixture.json",
+      "bytes": 1053,
+      "sha256": "9cb8306a73dc136cf8c2e644afb1018218dd2468f51974f3588b069d18673c80"
     },
     {
       "path": "source/cyclonedx-perspective-2.0.schema.json",
