@@ -5,6 +5,12 @@ This snapshot tests one concrete proposal against specification PR #1067 at
 `f3d852197b1e13860dd6dea9d1c22b6c56c286ef`. It is independent review evidence,
 not an accepted CycloneDX interpretation or a reference implementation.
 
+**Status: reproduction and proposal complete; reported, awaiting the maintainer's
+decision.** The [single review with three line suggestions](https://github.com/CycloneDX/specification/pull/1067#pullrequestreview-5423582956)
+was submitted on 2026-10-06. [status.json](status.json) records the immutable
+evidence commit and the verified review/comment permalinks. Upstream acceptance
+or repair is not claimed.
+
 The requested decision is limited to three applicable line suggestions covering
 four catalog mappings:
 
@@ -84,7 +90,7 @@ its individual reference strings and from resolved definition objects.
 ## Completion boundary
 
 The reproduction and proposal are complete. Upstream acceptance is pending.
-After posting the three suggestions in one review, this investigation is
+The three suggestions have been posted in one review; this investigation is
 reported and awaiting the maintainer's decision. A change to these four mappings
 requires only a bounded recheck of this snapshot. A documented rejection or
 deferral closes the proposal as not adopted; it does not turn the original

@@ -244,8 +244,8 @@
     },
     {
       "path": "snapshots/2026-10-06-catalog-integration/README.md",
-      "bytes": 5804,
-      "sha256": "5bfafe3b1a74211a1664a42ca66502667edb5f5ed7e27edecfe761b9a382bbab"
+      "bytes": 6217,
+      "sha256": "30e73ab74811b75f4595d8f0d7cdf1e0a16c4a098df9d8152a96a327363299f1"
     },
     {
       "path": "snapshots/2026-10-06-catalog-integration/catalog.patch",
@@ -276,6 +276,11 @@
       "path": "snapshots/2026-10-06-catalog-integration/sources.json",
       "bytes": 33692,
       "sha256": "68db11af450a2e227fc7e6de0e9153a2db6c48ac60fce137df90e588ee8de79a"
+    },
+    {
+      "path": "snapshots/2026-10-06-catalog-integration/status.json",
+      "bytes": 1909,
+      "sha256": "690784ba70d2d85e103579c68189348605c798564a018a5c47a2301eea48ba53"
     },
     {
       "path": "snapshots/2026-10-06-catalog-integration/two-model-fixture.json",

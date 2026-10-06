@@ -1,0 +1,46 @@
+{
+  "status": "reported-awaiting-maintainer-decision",
+  "investigation_status": "reproduction-and-proposal-complete",
+  "upstream_accepted": false,
+  "upstream_fixed": false,
+  "evidence_commit": "c42bdb1306d78c3c6349ce0dfbefd297a299a46b",
+  "source_heads": {
+    "pr1067": "565b1d130b30d6f4d0be45b9090781e8958de804",
+    "pr990": "f3d852197b1e13860dd6dea9d1c22b6c56c286ef"
+  },
+  "review": {
+    "id": 5423582956,
+    "html_url": "https://github.com/CycloneDX/specification/pull/1067#pullrequestreview-5423582956",
+    "state": "COMMENTED",
+    "submitted_at": "2026-10-06T03:48:21Z",
+    "commit_id": "565b1d130b30d6f4d0be45b9090781e8958de804"
+  },
+  "review_body_sha256": "54483348f8ef64857c7aae27d31371f26fad04acbf167ea60d782c008b98ef6c",
+  "suggestions": [
+    {
+      "id": 4191343870,
+      "url": "https://github.com/CycloneDX/specification/pull/1067#discussion_r4191343870",
+      "path": "perspectives/model-card-perspective.json",
+      "start_line": 167,
+      "end_line": 167,
+      "body_sha256": "aa370f2875dec58a04500bd987f7d705588404b7a5874f395db21764ccf4c81c"
+    },
+    {
+      "id": 4191343888,
+      "url": "https://github.com/CycloneDX/specification/pull/1067#discussion_r4191343888",
+      "path": "perspectives/model-card-perspective.json",
+      "start_line": 175,
+      "end_line": 186,
+      "body_sha256": "51f665b97384549cf34332266b618286ab6347684631c8e2273f6d3a026adf06"
+    },
+    {
+      "id": 4191343894,
+      "url": "https://github.com/CycloneDX/specification/pull/1067#discussion_r4191343894",
+      "path": "perspectives/model-card-perspective.json",
+      "start_line": 238,
+      "end_line": 238,
+      "body_sha256": "d2242626dd53c208728158799836d7abfd9e5180f268ec57619c3334e857f726"
+    }
+  ],
+  "next_action": "Recheck only these four mappings if a maintainer responds or changes them. Otherwise keep reported/pending status without extending this investigation."
+}
